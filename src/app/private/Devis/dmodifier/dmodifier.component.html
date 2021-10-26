@@ -1,0 +1,596 @@
+<div id="wrapper">
+    <app-sidebar></app-sidebar>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Vente <small>/ Devis<small> / Ajouter devis</small></small></h1>
+                </div>
+                <!-- Card Body -->
+
+                <body class="light" main-theme-layout="ltr" style="padding-right: 0px;">
+                    <div ng-version="8.0.1">
+                        <div></div>
+                        <router-outlet></router-outlet>
+                        <div>
+                            <div class="dark-body-only" id="outer-container">
+                                <div class="page-wrapper default" id="canvas-bookmark">
+                                    <div class="page-body-wrapper default">
+                                        <div class="page-body">
+                                            <main>
+                                                <router-outlet></router-outlet>
+                                                <div class="ng-star-inserted">
+                                                    <div class="container-fluid ng-star-inserted">
+                                                        <div class="row justify-content-center ng-star-inserted">
+                                                            <div
+                                                                class="card col-md-10 col-11 shadow-lg shadow-showcase water-marka">
+                                                                <div class="row p-3 d-md-none d-block">
+                                                                    <div class="col-md-5 m-t-20 col-12">
+                                                                        <h3 class="text-muted mt-4 ng-star-inserted"
+                                                                            style="text-align: center; font-size: 34px">
+                                                                        </h3>
+                                                                    </div>
+                                                                    <div class="col-md-5 m-t-20 col-12">
+                                                                        <div>
+                                                                            <div
+                                                                                class="d-flex justify-content-center ng-star-inserted">
+                                                                                <img style="border:1px solid rgb(230, 222, 222);"
+                                                                                    _ngcontent-yfe-c27=""
+                                                                                    class="invoiceLogo ng-star-inserted"
+                                                                                    height="150px"
+                                                                                    src="/assets/img/logo.jpg">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="row p-3 justify-content-between d-md-block d-none">
+                                                                    <div class="col-md-12 m-t-50 col-12">
+                                                                        <h3 class="text-muted mt-4 ng-star-inserted"
+                                                                            style="text-align: right; font-size: 34px">
+                                                                            DEVIS
+                                                                        </h3>
+                                                                    </div>
+                                                                    <div class="col-md-5 m-t-20 col-12">
+                                                                        <div>
+                                                                            <div
+                                                                                class="d-flex justify-content-center ng-star-inserted">
+                                                                                <img style="border:1px solid rgb(230, 222, 222);"
+                                                                                    _ngcontent-yfe-c27=""
+                                                                                    class="invoiceLogo ng-star-inserted"
+                                                                                    height="150px"
+                                                                                    src="/assets/img/logo.jpg">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row p-3 justify-content-between">
+                                                                    <div class="col-md-5 m-t-20 col-12">
+                                                                        <div>
+                                                                            <div class="panel panel-alt ng-star-inserted"
+                                                                                id="clientDiv">
+                                                                                <div class="panel-heading d-flex">
+                                                                                    <span
+                                                                                        class="invoice-logo-text lh10 p-2 p-l-0 text-muted ng-binding ng-star-inserted">
+                                                                                        Client: </span>
+                                                                                    <div
+                                                                                        class="ng-autocomplete ng-star-inserted">
+                                                                                        <div
+                                                                                            class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                            <div
+                                                                                                class="autocomplete-container">
+                                                                                                <div
+                                                                                                    class="input-container">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="suggestions-container is-hidden">
+                                                                                                    <ul></ul>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="suggestions-container is-visible">
+                                                                                                    <ul></ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <span
+                                                                                        class="p-2 d-md-none d-flex"><i
+                                                                                            class="icon-angle-down"></i></span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="panel-body div-customer ng-star-inserted">
+                                                                                <hr
+                                                                                    style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                            </div>
+
+                                                                            <!-- Sélection d'un client déja exsistant dans la BD -->
+
+                                                                            <div
+                                                                                class="row m-b-5 form-group ng-star-inserted">
+                                                                                <label class="col">Nom
+                                                                                    du client :</label><label
+                                                                                    class="col ng-star-inserted">{{devis.client.nom}}</label>
+                                                                            </div>
+
+                                                                            <div class="row m-b-5 form-group"><label
+                                                                                    class="col">Numéro
+                                                                                    mobile :</label><label
+                                                                                    class="col ng-star-inserted">{{devis.client.num}}</label>
+                                                                                    <label *ngIf="devis.client.num === ''">--</label>
+
+                                                                            </div>
+
+                                                                            <div class="row m-b-5 form-group"><label
+                                                                                    class="col">Adresse
+                                                                                    : </label>
+                                                                                    <label style="margin-left: 28px;" *ngIf="devis.client.adresse === ''">--</label>
+                                                                                    <label
+                                                                                    class="col ng-star-inserted">{{devis.client.adresse}}</label>
+                                                                                    
+                                                                            </div>
+
+                                                                            <div class="row m-b-5 form-group"><label
+                                                                                    class="col">Email
+                                                                                    :</label><label
+                                                                                    class="col ng-star-inserted">{{devis.client.email}}
+                                                                                </label>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5 m-t-20 col-12">
+                                                                        <div>
+                                                                            <div
+                                                                                class="panel panel-alt ng-untouched ng-pristine ng-valid">
+                                                                                <div class="panel-heading p-2">
+                                                                                    <span
+                                                                                        class="invoice-logo-text lh10 text-muted ng-binding p-2 p-l-0">
+                                                                                        Détails du
+                                                                                        document </span>
+                                                                                    <div
+                                                                                        class="panel-btns pull-right ml10">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="panel-body">
+                                                                                    <hr class="mt-4 mb-4"
+                                                                                        style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                                    <div class="row m-b-5 form-group">
+                                                                                        <label
+                                                                                            class="col-4 col-form-label">Date
+                                                                                            du
+                                                                                            document</label>
+                                                                                        <div class="col-8">
+                                                                                            {{devis.date_document}}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row m-b-5 form-group ">
+                                                                                        <label
+                                                                                            class="col-4 col-form-label">Projet
+                                                                                            :</label>
+                                                                                        <div
+                                                                                            class="ng-autocomplete ng-star-inserted">
+                                                                                            <div
+                                                                                                class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                                <div
+                                                                                                    class="autocomplete-container">
+                                                                                                    <div style="margin-top: -41px;margin-left: 128px;"
+                                                                                                        class="input-container">
+                                                                                                        {{devis.projet}}
+                                                                                                        <label *ngIf="devis.projet === ''">--</label>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="suggestions-container is-hidden">
+                                                                                                        <ul></ul>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="suggestions-container is-visible">
+                                                                                                        <ul></ul>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row m-b-5 form-group">
+                                                                                        <label
+                                                                                            class="col-4 col-form-label"
+                                                                                            for="inputDate">Note
+                                                                                            :</label>
+                                                                                        <div
+                                                                                            class="ng-autocomplete ng-star-inserted">
+                                                                                            <div
+                                                                                                class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                                <div
+                                                                                                    class="autocomplete-container">
+                                                                                                    <div style="margin-top: -41px;margin-left: 128px;"
+                                                                                                        class="input-container">
+                                                                                                        {{devis.note}}
+                                                                                                        <label *ngIf="devis.note === ''">--</label>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="suggestions-container is-hidden">
+                                                                                                        <ul></ul>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="suggestions-container is-visible">
+                                                                                                        <ul></ul>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row p-3 justify-content-center">
+                                                                    <div class="col-12 m-t-20">
+                                                                        <div>
+                                                                            <div
+                                                                                class="ng-untouched ng-pristine ng-valid">
+                                                                                <table
+                                                                                    class="table table-bordered table-document">
+                                                                                    <thead class="cf"
+                                                                                        style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                                        <tr>
+                                                                                            <th class="th-designation">
+                                                                                                Désignation </th>
+                                                                                            <th
+                                                                                                class="th-150 ng-star-inserted">
+                                                                                                Quantité </th>
+                                                                                            <th
+                                                                                                class="th-200 ng-star-inserted">
+                                                                                                Prix HT </th>
+                                                                                            <th
+                                                                                                class="th-150 ng-star-inserted">
+                                                                                                Taxe </th>
+                                                                                            <th
+                                                                                                class="th-150 ng-star-inserted">
+                                                                                                TVA </th>
+                                                                                            <th
+                                                                                                class="th-200 ng-star-inserted">
+                                                                                                Total HT </th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody dragula="HANDLES">
+                                                                                        <tr *ngFor="let s of devis.service " class="detail-tr ng-untouched ng-pristine ng-valid ng-star-inserted"
+                                                                                            data-color="#000000"
+                                                                                            data-order="0" id="0">
+                                                                                            <td class="th-designation"
+                                                                                                data-title="Désignation">
+                                                                                                <div
+                                                                                                    class="ng-star-inserted">
+                                                                                                    <div
+                                                                                                        class="d-flex ng-star-inserted">
+                                                                                                        <span
+                                                                                                            style="width: 100px;"
+                                                                                                            class="ng-star-inserted">
+                                                                                                            --</span>
+                                                                                                        <div
+                                                                                                            class="d-flex flex-column flex-fill">
+                                                                                                            <div>
+                                                                                                                <span
+                                                                                                                    class="ng-star-inserted">
+                                                                                                                    {{s.lib}}
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td data-title="Quantité"
+                                                                                                class="ng-star-inserted">
+                                                                                                <span
+                                                                                                    class="ng-star-inserted">
+                                                                                                <label  *ngIf="s.quantite === ''">--</label>
+                                                                                                    {{s.quantite}}
+                                                                                                </span>
+                                                                                                
+                                                                                            </td>
+                                                                                            <td title="Prix HT"
+                                                                                                class="ng-star-inserted">
+                                                                                                <div
+                                                                                                    class="input-group">
+                                                                                                </div>
+                                                                                                <span
+                                                                                                    class="ng-star-inserted">
+                                                                                                    {{s.prix}}
+                                                                                                </span>
+                                                                                            </td>
+                                                                                            <td title="Taxe"
+                                                                                                class="ng-star-inserted">
+                                                                                                <div
+                                                                                                    class="input-group">
+                                                                                                </div>
+                                                                                                <span
+                                                                                                    class="ng-star-inserted">
+                                                                                                    {{s.taxe}}
+                                                                                                    <label *ngIf="s.taxe === ''">--</label>
+                                                                                                </span>
+                                                                                            </td>
+                                                                                            <td data-title="TVA"
+                                                                                                class="ng-star-inserted">
+                                                                                                <span
+                                                                                                    class="ng-star-inserted">
+                                                                                                    {{s.tva}}
+                                                                                                    <label *ngIf="s.tva === ''">--</label>
+                                                                                                </span>
+                                                                                            </td>
+                                                                                            <td data-title="Total HT" 
+                                                                                                class="ng-star-inserted">
+                                                                                                <span>
+                                                                                                {{s.resultat_ht|number}}
+                                                                                                <label *ngIf="s.resultat_ht === ''">--</label>
+                                                                                                </span>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div
+                                                                                class="d-flex justify-content-center d-md-none ng-star-inserted">
+                                                                                <div class="d-inline-block p-2 dropdown"
+                                                                                    ngbdropdown="" role="group"><button
+                                                                                        class="btn btn-outline-primary dropdown-toggle"
+                                                                                        id="dropdownBasic1"
+                                                                                        aria-expanded="false">
+                                                                                        Ajouter
+                                                                                    </button>
+                                                                                    <div aria-labelledby="dropdownBasic1"
+                                                                                        class="dropdown-menu"
+                                                                                        x-placement="bottom-left">
+                                                                                        <button class="dropdown-item">
+                                                                                            Ajouter
+                                                                                            Produit</button><button
+                                                                                            class="dropdown-item">
+                                                                                            Ajouter
+                                                                                            Texte
+                                                                                        </button><button
+                                                                                            class="dropdown-item">
+                                                                                            Ajouter
+                                                                                            Section
+                                                                                        </button><button
+                                                                                            class="dropdown-item">
+                                                                                            Ajouter
+                                                                                            Séparateur
+                                                                                        </button><button
+                                                                                            class="dropdown-item">
+                                                                                            Ajouter
+                                                                                            Sous-total
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-4"></div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="ng-star-inserted">
+                                                                            <table 
+                                                                                class="table table-bordered ng-star-inserted">
+                                                                                <thead
+                                                                                    style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                                    <tr>
+                                                                                        <th>TVA</th>
+                                                                                        <th>Base</th>
+                                                                                        <th>Montant</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr *ngFor="let s of devis.service let i =index " class="ng-star-inserted">
+                                                                                        <td scope="row">{{s.tva}}%</td>
+                                                                                        <td >{{devis.summary[i].base | number}}</td>
+                                                                                        <td >{{devis.summary[i].montant | number}}</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 ">
+                                                                        <div class="ng-star-inserted">
+                                                                            <table class="table ng-star-inserted"
+                                                                                id="document_total">
+                                                                                <thead
+                                                                                    style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                                </thead>
+                                                                                <tbody
+                                                                                    style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                                    <tr>
+                                                                                        <td>Total HT</td>
+                                                                                        <td id="lines_total">{{devis.totalHt|number}}</td>
+                                                                                    </tr>
+                                                                                    <tr *ngIf="devis.totalFODEC > 0" class="ng-star-inserted">
+                                                                                        <td>FODEC
+                                                                                        </td>
+                                                                                        <td class="value">
+                                                                                            {{devis.totalFODEC | number}} 
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr class="ng-star-inserted">
+                                                                                        <td>TOTAL TVA</td>
+                                                                                        <td class="value"
+                                                                                            id="total_excltax">{{devis.totalTVA | number}}</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>TOTAL TTC</td>
+                                                                                        <td class="value"
+                                                                                            id="total_excltax">{{devis.totalTTC | number}}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr class="ng-star-inserted">
+                                                                                        <td>Timbre fiscal</td>
+                                                                                        <td class="value">{{devis.timbreFiscale | number}}</td>
+                                                                                    </tr>
+    
+                                                                                    <tr
+                                                                                        style="background-color: rgba(0, 0, 0, 0.03);">
+                                                                                        <td class="font-weight-bold">NET
+                                                                                            À PAYER</td>
+                                                                                        <td
+                                                                                            class="value font-weight-bold">
+                                                                                            {{devis.totalPayer | number}}</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="row justify-content-center">
+                                                                    <div
+                                                                        class="col-md-6 ng-untouched ng-pristine ng-valid">
+                                                                        <div class="panel-body m-t-20">
+                                                                            <span class="ng-star-inserted"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row p-3 justify-content-center">
+                                                                    <div class="col-12">
+                                                                        <div
+                                                                            class="row p-3 justify-content-between ng-star-inserted">
+                                                                            <div class="col-12 p-3"
+                                                                                style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <div
+                                                                                    class="browse-articles browse-bottom">
+                                                                                    <h6>
+                                                                                        <b>ENTREPRISE</b>
+                                                                                    </h6>
+                                                                                    <span>Adresse</span><br>
+                                                                                    <span>Numéro</span><br>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <div
+                                                                                    class="browse-articles browse-bottom">
+                                                                                    <h6>
+                                                                                        <b>INFORMATIONS DE CONTACT</b>
+                                                                                    </h6>
+                                                                                    <span><strong>Admin</strong></span><br>
+                                                                                    <span>Numéro contact</span><br>
+                                                                                    <span>Site web</span><br>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <div
+                                                                                    class="browse-articles browse-bottom ng-star-inserted">
+                                                                                    <h6>
+                                                                                        <b></b>
+                                                                                    </h6>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ng-star-inserted">
+                                                        <div class="shadow shadow-showcase d-md-block d-none ng-star-inserted"
+                                                            style="position: fixed; bottom: 0; left: 0; width: 100vw; z-index: 99">
+                                                            <div _ngcontent-yfe-c17="" class="row" style="
+                                    border-top: solid;
+                                    border-top-color:#0bb33dbb ;
+                                    border-width: thick;
+                                    background-color: white;
+                                  ">
+                                                                <div class="col-md-6 col-12">
+                                                                    <label class="float-left docType">
+                                                                        <span style="color: #0288d1; font-size: 50px">
+                                                                            <i _ngcontent-lyw-c26=""
+                                                                                class="fa fa-file-text-o"
+                                                                                style="color: #0288d1"></i></span>
+                                                                        &nbsp; <span _ngcontent-lyw-c26="" style="
+                          color:#10742ea9;
+                          font-weight: 800;
+                          font-size: x-large;
+                          margin-top: -38px;
+                        ">
+                                                                             DEVIS
+                                                                        </span></label>
+                                                                </div>
+                                                                <div class="col-md-6 d-none d-md-block">
+                                                                    <div class="d-flex justify-content-end p-2 m-t-15 m-r-20">
+                                                                        <button routerLink="/devis/add"
+                                                                            class="btn btn-info float-right shadow shadow-showcase ng-star-inserted"
+                                                                            style="margin-left: 13px; height: 40px; width: 117px"
+                                                                            type="button"> Modifier</button>
+                                                                        <a href="#" data-toggle="modal"
+                                                                            data-target="#logModal">
+                                                                            <button routerLink="/dnegociation"
+                                                                                class="btn btn-success float-right shadow shadow-showcase save-document ng-star-inserted"
+                                                                                style="margin-left: 13px; height: 40px"
+                                                                                type="button">
+                                                                                Approuver
+                                                                            </button>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-block d-md-none ng-star-inserted">
+                                                            <div aria-label="FAB Menu"
+                                                                class="btn-group-fab" role="group">
+                                                                <div><button class="btn-test btn-main btn-primary"
+                                                                        data-placement="left"
+                                                                        style="outline: none !important" title="Menu"
+                                                                        type="button"><i class="fa fa-bars"></i></button>
+                                                                        <button
+                                                                        class="btn-test btn-sub btn-info"
+                                                                        data-placement="left" title="Fullscreen"
+                                                                        type="button"><i class="fa fa-gears"></i></button>
+                                                                        <button class="btn-test btn-sub btn-warning"
+                                                                        data-placement="left" title="Save"
+                                                                        type="button"><i _ngcontent-yfe-c17=""
+                                                                            class="fa fa-share-alt"></i></button>
+                                                                        <button class="btn-test btn-sub btn-danger"
+                                                                        data-placement="left" title="Download"
+                                                                        type="button"><i _ngcontent-yfe-c17=""
+                                                                            class="fa fa-file-pdf-o"></i></button>
+                                                                        <button class="btn-test btn-sub btn-black"
+                                                                        data-placement="left" title="Retour"
+                                                                        type="button"><i class="fa fa-arrow-left"></i>
+                                                                    </button>
+                                                                    <button class="btn-test btn-sub btn-success ng-star-inserted"
+                                                                        data-placement="left" type="button"
+                                                                        title="Approuver"><i class="fa fa-check"></i>
+                                                                    </button>
+                                                                    <button class="btn-test btn-sub btn-danger ng-star-inserted"
+                                                                        data-placement="left" triggers="manual"
+                                                                        type="button" title="Annuler"><i class="fa fa-undo"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </main>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                
+            </div>
+        </div>

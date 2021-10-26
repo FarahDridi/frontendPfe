@@ -1,0 +1,165 @@
+<body>
+
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signup">
+            <form [formGroup]="signupForm" class="user" (ngSubmit)="signupUser()">
+                <label style="margin-left: -25px;" for="chk" aria-hidden="true">Créez votre compte :</label>
+                <div class="form-group row">
+                    <div class=" mb-3 mb-sm-0">
+                        <div class="pp"><input formControlName="prenom" class="form-control " id="examplePrenom"
+                                type="text" size="21" class="fai" name="prenom" placeholder="Prénom" required=""></div>
+                        <div *ngIf="prenom.touched && prenom.invalid" class="text-danger">
+                            <div *ngIf="prenom.errors.required">
+                                <small>* Le prénom est obligatoire</small>
+                            </div>
+                            <div *ngIf="prenom.errors.minlength">
+                                <small>* Le prénom doit avoir au moins deux caractères</small>
+                            </div>
+                            <div *ngIf="prenom.errors.pattern">
+                                <small>* Le prénom est invalide</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" mb-3 mb-sm-0">
+                        <div class="pp"><input formControlName="nom" class="form-control " id="exampleNom" type="text"
+                                size="21" class="fais" name="nom" placeholder="Nom" required=""></div>
+                        <div *ngIf="nom.touched && nom.invalid" class="text-danger">
+                            <div *ngIf="nom.errors.required">
+                                <small>* Le nom est obligatoire</small>
+                            </div>
+                            <div *ngIf="nom.errors.minlength">
+                                <small>* Le nom doit avoir au moins deux caractères</small>
+                            </div>
+                            <div *ngIf="nom.errors.pattern">
+                                <small>* Le nom est invalide</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+
+                        <input formControlName="email" class="form-control" id="exampleEmail" type="email" size="50"
+                            name="email" placeholder="Email" required="">
+                        <div *ngIf="email.touched && email.invalid" class="text-danger">
+                            <div *ngIf="email.errors.required">
+                                <small>* L'adresse email est obligatoire</small>
+                            </div>
+                            <div *ngIf="email.errors.email">
+                                <small>* L'adresse email est invalide</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="mb-3 mb-sm-0">
+                        <div class="pp"><input formControlName="password" class="form-control" id="examplePassword"
+                                type="Password" size="21" class="fai" name="password" placeholder="Mot de passe"
+                                required=""></div>
+                        <div *ngIf="password.touched && password.invalid" class="text-danger">
+                            <div *ngIf="password.errors.required">
+                                <small>* Le mot de passe est obligatoire</small>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class=" mb-3 mb-sm-0">
+                        <div class="pp"><input formControlName="repassword" class="form-control" id="exampleRepassword"
+                                type="Password" size="21" class="fais" name="repassword"
+                                placeholder="Répéter mot de passe" required=""></div>
+                        <div *ngIf="repassword.touched && repassword.invalid"  class="text-danger">
+                            <div *ngIf="repassword.errors.required">
+                                <small>* Champ obligatoire</small>
+                            </div>
+                            <div *ngIf="repassword.errors.invalid" class="text-danger">
+								<small> The passwords entered do not match </small>
+							</div>
+                            <!-- <div *ngIf="repassword.valid && repassword.value != password.value" class="text-danger">
+								<small> The passwords entered do not match </small>
+							</div> -->
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input formControlName="ent" class="form-control" id="exampleEnt" type="text" size="50"
+                            name="ent" placeholder="Entreprise" required="">
+                        <div *ngIf="ent.touched && ent.invalid" class="text-danger">
+                            <div *ngIf="ent.errors.required">
+                                <small>* champ obligatoire</small>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <button  style="margin-left:133px;" [disabled]="signupForm.invalid"
+                            type="submit">Suivant</button>
+                        <!-- <button  style="margin-left:133px;" [disabled]="signupForm.invalid || repassword.value != password.value"
+                            type="submit">Suivant</button> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+
+       <!--  <div class="login">
+            <form [formGroup]="signinForm" class="user" (ngSubmit)="signinUser()">
+
+                <label for="chk" aria-hidden="true">Connexion</label>
+                <div class="form-group row">
+                    <div class="col-sm-12 mb-3 mb-sm-0">
+                        <input formControlName="emailsignin" class="form-control" id="exampleEmail" type="email"
+                            name="email2" placeholder="Adresse Email" required="">
+                            <div *ngIf="emailsignin.touched && emailsignin.invalid" class="text-danger">
+                                <div *ngIf="emailsignin.errors.required">
+                                    <small style="padding-left:109px;">* L'adresse email est obligatoire</small>
+                                </div>
+                                <div *ngIf="emailsignin.errors.pattern">
+                                    <small style="padding-left:109px;">* L'adresse email est invalide</small>
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12 mb-3 mb-sm-0">
+                        <input  formControlName="passwordsignin" class="form-control" id="examplePassword" type="Password"
+                            name="pswd" placeholder="Mot de passe" required="">
+                            <div *ngIf="passwordsignin.touched && passwordsignin.invalid" class="text-danger">
+                                <div *ngIf="passwordsignin.errors.required">
+                                    <small style="padding-left:109px;">* Le mot de passe est obligatoire</small>
+                                </div>
+                                <div *ngIf="passwordsignin.errors.pattern">
+                                    <small style="padding-left:109px;">* Le mot de passe est invalide</small>
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <span class="custom-control-label" for="customCheck">Se souvenir de moi</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12 mb-3 mb-sm-0">
+                        <button  style="margin-top: -3px;" [disabled]="signinForm.invalid"  type="submit">Login</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a routerLink="/password">Mot de passe oublié ?</a>
+                </div>
+            </form>
+            
+        </div> -->
+    </div>
+</body>

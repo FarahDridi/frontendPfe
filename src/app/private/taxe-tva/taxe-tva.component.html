@@ -1,0 +1,353 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Paramétres <small>/ Taxe & TVA</small></h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col-12">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-dark">Taxes</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+
+                                <p><a href="#" data-toggle="modal" data-target="#addModal">
+                                        <button (click)="ajout()" style="margin-top:10px;" class="btn btn-success"
+                                            type="submit"><i class="fa fa-plus"></i> Ajouter</button></a></p>
+                                <h2></h2>
+                                <ul _ngcontent-yjf-c31="" class="nav-tabs nav" ngbnav="" role="tablist">
+                                    <li _ngcontent-yjf-c31="" ngbnavitem="" class="nav-item"><a _ngcontent-yjf-c31=""
+                                            ngbnavlink="" id="ngb-nav-38" class="nav-link active" role="tab"
+                                            aria-controls="ngb-nav-38-panel" aria-selected="true" aria-disabled="false">
+                                            Taxe</a></li>
+
+                                </ul>
+                                <div class="row">
+                                    <div class="col">
+                                        <table class="table table-sm">
+                                            <thead style="color:#0e5355;font-size: 13px;">
+                                                <tr>
+                                                    <th>Nom Fiscal</th>
+                                                    <th>Context</th>
+                                                    <th>Valeur</th>
+                                                    <th>Appliquée sur les produits</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let taxe of taxesList">
+
+                                                    <th>{{taxe.nom}}</th>
+                                                    <td>{{taxe.utilisation}}</td>
+                                                    <td>{{taxe.signe}} {{taxe.valeur}}</td>
+                                                    <td>{{taxe.taxe_produits}}</td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+</div>
+
+
+
+
+
+                                <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+
+                                            <div _ngcontent-ykg-c20="" class="text-center p-2 ng-star-inserted">
+                                                <br><h3 class="text-danger">AJOUTER TAXE</h3>
+
+                                                <div class="card-body">
+                                                    <form>
+                                                        <div><label style="margin-left: -390px;"
+                                                                for="">Nom</label><input style="width: 410px;"
+                                                                class="form-control"
+                                                                formcontrolname="name" id="" name="" placeholder=""
+                                                                type="text">
+                                                            <!---->
+                                                        </div>
+                                                        <div class="form-group"><label style="margin-left: -390px;" class="btn-radio-text"
+                                                                for="">Label</label><input style="width: 410px;"
+                                                                class="form-control"
+                                                                formcontrolname="label" id="" name="" placeholder=""
+                                                                type="text">
+                                                            <!---->
+                                                        </div>
+                                                        <div class="form-group"><label style="margin-left: -390px;"
+                                                                class="btn-radio-text">Type</label><select style="width: 410px;margin-left: 7px;"
+                                                                class="form-control"
+                                                                formcontrolname="type" id="my-select" name="">
+                                                                <option _ngcontent-jbi-c14="" value="2">Pourcentage
+                                                                </option>
+                                                                <option _ngcontent-jbi-c14="" value="1">Fixée</option>
+                                                            </select>
+                                                            <!---->
+                                                        </div><label style="margin-left: -390px;" class="btn-radio-text"
+                                                            for="">Signe</label>
+                                                        <div class="form-group form-inline">
+                                                            <div class="m-checkbox-inline mb-0 custom-radio-ml">
+                                                                <div class="radio radio-primary">
+                                                                    <input
+                                                                        formcontrolname="taxSign" id="tvaplus"
+                                                                        name="taxSign" type="radio"><label style="margin-left: 35px;margin-top: -25px;"
+                                                                        class="mb-0 btn-radio-text"
+                                                                        for="tvaplus">+</label>
+                                                                </div>
+                                                                <div style="margin-left: 150px;margin-top: -23px;" class="radio radio-primary">
+                                                                    <input
+                                                                        formcontrolname="taxSign" id="tvaminus"
+                                                                        name="taxSign" type="radio"><label style="margin-left: 35px;margin-top: -25px;"
+                                                                        class="mb-0 btn-radio-text"
+                                                                        for="tvaminus">-</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group"><label style="margin-left: -390px;" class="btn-radio-text"
+                                                                for="">Valeur</label><input style="width: 410px;"
+                                                                class="form-control"
+                                                                formcontrolname="amount" id="" name="" placeholder=""
+                                                                type="number">
+                                                            <!---->
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div style="margin-left: -300px;" class="checkbox checkbox-primary"><input formcontrolname="belong_vat"
+                                                                    id="checkbox-primary-2" name="belong_vat"
+                                                                    type="checkbox"
+                                                                    class="ng-untouched ng-pristine ng-valid"><label style="margin-left: -70px;" class="btn-radio-text"
+                                                                    for="checkbox-primary-2">Taxe appliquée à la TVA
+                                                                </label></div>
+                                                        </div>
+                                                        <div class="form-group"><label style="margin-left: -350px;" class="btn-radio-text"
+                                                                for="">Utilisation</label><br>
+                                                            <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
+                                                                <div style="margin-left: -400px;" class="radio radio-primary">
+                                                                    <input  formcontrolname="tax_group" id="radioinline1"
+                                                                        name="tax_group" type="radio"
+                                                                        class="ng-untouched ng-pristine ng-valid"><label style="margin-left: -70px;"
+                                                                        _ngcontent-jbi-c14=""
+                                                                        class="mb-0 btn-radio-text"
+                                                                        for="radioinline1">Tous</label>
+                                                                </div>
+                                                                <div style="margin-top: -20px;margin-left: -200px;" class="radio radio-primary">
+                                                                    <input formcontrolname="tax_group" id="radioinline2"
+                                                                        name="tax_group" type="radio"
+                                                                        class="ng-untouched ng-pristine ng-valid"><label style="margin-top: -20px;margin-left: -70px;"
+                                                                        class="mb-0 btn-radio-text"
+                                                                        for="radioinline2">Vente</label>
+                                                                </div>
+                                                                <div style="margin-top: -23px;margin-left: -15px;" class="radio radio-primary">
+                                                                    <input formcontrolname="tax_group" id="radioinline3"
+                                                                        name="tax_group" type="radio"
+                                                                        class="ng-untouched ng-pristine ng-valid"><label style="margin-top: -20px;margin-left: -70px;"
+                                                                        _ngcontent-jbi-c14=""
+                                                                        class="mb-0 btn-radio-text"
+                                                                        for="radioinline3">Achat</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!---->
+                                                        <div class="form-group"><label style="margin-left: -350px;" class="btn-radio-text"
+                                                                for="">Application</label><br>
+                                                            <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
+                                                                <div style="margin-left: -365px;" class="radio radio-primary">
+                                                                    <input formcontrolname="is_vat_tax" id="beforevat"
+                                                                        name="is_vat_tax" type="radio"
+                                                                        class="ng-untouched ng-pristine ng-valid"><label style="margin-left: -70px;"
+                                                                        class="mb-0 btn-radio-text"
+                                                                        for="beforevat">Avant tva</label>
+                                                                </div>
+                                                                <div style="margin-top: -20px;" class="radio radio-primary">
+                                                                    <input formcontrolname="is_vat_tax" id="aftervat"
+                                                                        name="is_vat_tax" type="radio"
+                                                                        class="ng-untouched ng-pristine ng-valid"><label style="margin-top: -20px;margin-left: -70px;"
+                                                                        _ngcontent-jbi-c14=""
+                                                                        class="mb-0 btn-radio-text" for="aftervat">Après
+                                                                        tva</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!---->
+                                                        <div style="margin-left: -250px;" class="checkbox checkbox-primary">
+                                                            <input formcontrolname="is_product_tax_only"
+                                                                id="checkbox-primary-1" name="is_product_tax_only"
+                                                                type="checkbox"
+                                                                class="ng-untouched ng-pristine ng-valid"><label style="margin-left: -70px;"
+                                                                _ngcontent-jbi-c14="" class="btn-radio-text"
+                                                                for="checkbox-primary-1">Taxe appliquée sur les produits
+                                                            </label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+
+
+                                                <br>
+
+                                                <button
+                                                    style="font-weight:bold;color: #fff;background-color:rgba(28, 192, 110, 0.808);margin-right: 10px; margin-bottom: 50px;"
+                                                    id="closeModalButton" data-toggle="modal" data-target="#addModal"
+                                                    class="btn btn-default" data-dismiss="modal">Annuler</button>
+                                                <a style="border: 0;
+                                border-radius: .25em;
+                                margin-bottom: 50px;
+                                background: initial;
+                                background-color:rgba(28, 192, 110, 0.808);
+                                color: #fff;
+                                font-size: 1.0625em;" class="btn btn-success" (click)="ajout()">Enregistrer </a>
+
+
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            <!-- /.container-fluid -->
+
+                        </div>
+                        <!-- End of Main Content -->
+                        <div class="col-12">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-dark">TVA</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+    
+                                    <p><a href="#" data-toggle="modal" data-target="#addModal">
+                                            <button (click)="ajout()" style="margin-top:10px;" class="btn btn-success"
+                                                type="submit"><i class="fa fa-plus"></i> Ajouter</button></a></p>
+                                    <h2></h2>
+                                    <ul _ngcontent-yjf-c31="" class="nav-tabs nav" ngbnav="" role="tablist">
+                                        <li _ngcontent-yjf-c31="" ngbnavitem="" class="nav-item"><a _ngcontent-yjf-c31=""
+                                                ngbnavlink="" id="ngb-nav-38" class="nav-link active" role="tab"
+                                                aria-controls="ngb-nav-38-panel" aria-selected="true" aria-disabled="false">
+                                                TVA</a></li>
+    
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col">
+                                            <table class="table table-sm">
+                                                <thead style="color:#0e5355;font-size: 13px;">
+                                                    <tr>
+                                                        <th>Valeur</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let tva of tvaList">
+                                                        <td>{{tva.valeur}}</td>
+                                                    </tr>
+    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+                                    <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+    
+                                                <div _ngcontent-ykg-c20="" class="text-center p-2 ng-star-inserted">
+                                                    <br><h3 class="text-danger">AJOUTER TVA</h3>
+    
+                                                    <div class="card-body">
+                                                       
+
+
+
+                                                    </div>
+    
+                                                    <br>
+    
+                                                    <button
+                                                        style="font-weight:bold;color: #fff;background-color:rgba(28, 192, 110, 0.808);margin-right: 10px; margin-bottom: 50px;"
+                                                        id="closeModalButton" data-toggle="modal" data-target="#addModal"
+                                                        class="btn btn-default" data-dismiss="modal">Annuler</button>
+                                                    <a style="border: 0;
+                                    border-radius: .25em;
+                                    margin-bottom: 50px;
+                                    background: initial;
+                                    background-color:rgba(28, 192, 110, 0.808);
+                                    color: #fff;
+                                    font-size: 1.0625em;" class="btn btn-success" (click)="ajout()">Enregistrer </a>
+    
+    
+    
+                                                </div>
+    
+    
+                                            </div>
+                                        </div>
+    
+                                    </div>
+    
+    
+    
+                                </div>
+                                <!-- /.container-fluid -->
+    
+                            </div>
+                        <!-- Footer -->
+                        <footer style="margin-left: 400px;" class="sticky-footer bg-white">
+                            <div class="container my-auto">
+                                <div class="copyright text-center my-auto">
+                                    <span>Copyright &copy; Your Website 2021</span>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- End of Footer -->
+
+                   
+                    <!-- End of Content Wrapper -->
+
+                </div>
+                <!-- End of Page Wrapper -->

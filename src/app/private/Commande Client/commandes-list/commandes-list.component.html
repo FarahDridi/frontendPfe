@@ -1,0 +1,282 @@
+<div id="wrapper">
+    <app-sidebar></app-sidebar>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Vente <small>/ Commande Client</small></h1>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-dark">Liste des commandes</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+
+
+
+                                <form
+                                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                    <div class="input-group">
+                                        <input (input)="filter($event.target.value)" type="text"
+                                            class="form-control bg-light border-0 small"
+                                            placeholder="Recherche par nom du client " aria-label="Search"
+                                            aria-describedby="basic-addon2" size="57px"> <label
+                                            for="date1"></label><input type="Date" name="date1" size="5" maxlength="40"
+                                            id="date1">
+                                        <label for="date2"></label><input type="Date" name="date2" size="3.5"
+                                            maxlength="40" id="date2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-success" type="button">
+                                                <i class="fas fa-search fa-sm "></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+
+
+                                <p><button style="margin-top:10px;" class="btn btn-success" type="submit"
+                                        routerLink="/commandes/add"><i class="fa fa-plus"></i> Ajouter</button></p>
+                                <h2></h2>
+                                <ul _ngcontent-yjf-c31="" class="nav-tabs nav" ngbnav="" role="tablist">
+                                    <li class="nav-item"><a  id="ngb-nav-38" class="nav-link active" role="tab"
+                                            aria-controls="ngb-nav-38-panel" aria-selected="true" aria-disabled="false">
+                                            Commandes ({{commandesList.length}})</a></li>
+                                    
+                                </ul>
+                                <div>
+                                    <nav class="arrow" id="menu-container">
+
+                                        <div  class="menu-inner-box">
+                                            <div *ngFor="let month of array_months" class="menu btn-group">
+                                                <button class="btn btn-light" (click)="getData(month.value)"
+                                                    type="button">{{ month.month}} </button>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div *ngIf="tempCommandesList.length==0" class="alert alert-warning">aucune commande
+                                            trouvée
+                                        </div>
+                                        <table *ngIf="tempCommandesList.length>0" class="table table-sm">
+                                            <thead style="background-color:#0e5355;color: white;font-size: 13px;">
+                                                <tr>
+                                                    <th>Référence</th>
+                                                    <th>Date</th>
+                                                    <th>Client</th>
+                                                    <th>Montant TTC</th>
+                                                    <th>Montant HT</th>
+                                                    <th>Etat</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let commande of tempCommandesList ; let i = index ;">
+
+                                                    <th>DEV-0000{{i+1}}</th>
+                                                    <td>{{commande.date | date:'dd/MM/yyyy'}}</td>
+                                                    <td>{{commande.client.nom}}</td>
+                                                    <td> TND</td>
+                                                    <td>{{commande.prix}} TND</td>
+                                                    <td style="margin-top: 8px;" class="badge badge-primary">
+                                                        {{commande.etat}}</td>
+
+
+                                                    <th>
+                                                        <a href="#" data-toggle="modal" data-target="#logoutModal">
+                                                            <button class="btn btn-sm btn-warning" (click)="selectCommande(commande)">
+                                                                <i class="fa fa-eye"></i>
+                                                            </button>
+                                                        </a>
+
+                                                        <button style="margin-left: 8px;" (click)="updateCommande(i)"
+                                                            class="btn btn-sm btn-info ">
+                                                            <i class="fa fa-pen"></i>
+                                                        </button>
+
+                                                        <a href="#" data-toggle="modal" data-target="#deleteModal">
+                                                            <button style="margin-left: 8px;" (click)="deleteRow(commande)"
+                                                                class="btn btn-sm btn-danger">
+                                                                <i class="fas fa-trash"></i>
+                                                            </button>
+                                                        </a>
+
+                                                        <button style="margin-left: 8px;"
+                                                            class="btn btn-sm btn-success">
+                                                            <i class="far fa-file-pdf"></i>
+                                                        </button>
+
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div #viewModal class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Aperçu</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-4">
+                                                <div class="row m-t-10 m-b-10"><span class="col-12 title-quick-view"><span
+                                                            style="color:rgba(179, 147, 5, 0.863)">Information Client
+                                                            :</span></span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6 type-doperation"><label><span
+                                                                style="color:rgba(6, 175, 133, 0.863);margin-right: 100px;">Client:
+                                                            </span>{{selectedCommande?.client.nom | uppercase}}</label></div>
+                                                    <div class="col-6 type-doperation ng-star-inserted"><label> </label></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6 type-doperation"><label><span
+                                                                style="color:rgba(6, 175, 133, 0.863);margin-right: 100px;">Téléphone:
+                                                            </span>{{selectedCommande?.client.num}}</label></div>
+                                                    <div class="col-6 type-doperation ng-star-inserted"><label></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-7">
+                                                <div class="row m-t-10 m-b-10"><span class="col-12 title-quick-view"><span
+                                                            style="color:rgba(179, 147, 5, 0.863)">Information Document
+                                                            :</span></span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5 col-12">
+                                                        <div class="row">
+                                                            <div class="col-5 type-doperation">
+                                                                <label><span
+                                                                        style="color:rgba(6, 175, 133, 0.863);margin-right: 100px;">Etat:
+                                                                    </span><span style="margin-top: 8px;" class="badge badge-primary"> {{selectedCommande?.etat}}</span></label>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-5 type-doperation">
+                                                                <label><span
+                                                                        style="color:rgba(6, 175, 133, 0.863);margin-right: 100px;">Date:
+                                                                    </span>{{selectedCommande?.date |date:'short'}}</label>
+                                                            </div>
+                                                            <div class="col-7 type-doperation">
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7 col-12">
+                                                        <!--  <div _ngcontent-waf-c20="" class="row">
+                                                            <div _ngcontent-waf-c20="" class="col-5 type-doperation">
+                                                                <label _ngcontent-waf-c20="" class="text-nowrap">Date
+                                                                    d'échéance :</label></div>
+                                                            <div _ngcontent-waf-c20="" class="col-7 type-doperation">
+                                                                <label _ngcontent-waf-c20=""> 4 mai 2021 </label></div>
+                                                        </div> -->
+                                                        <div class="row">
+                                                            <div class="col-5 type-doperation">
+                                                                <label><span
+                                                                        style="color:rgba(6, 175, 133, 0.863);margin-right: 100px;">Total(HT):
+                                                                    </span>{{selectedCommande?.service.resultat_ht|number}} TND</label>
+                                                            </div>
+                                                            <div class="col-7 type-doperation">
+                                                                <label class="amount-text">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-5 type-doperation">
+                                                                <label><span
+                                                                        style="color:rgba(6, 175, 133, 0.863);margin-right: 100px;">Quantité:
+                                                                    </span>{{selectedCommande?.quantite}}</label>
+                                                            </div>
+                                                            <div class="col-7 type-doperation">
+                                                                <label class="amount-text">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-5 type-doperation">
+                                                                <label><span
+                                                                        style="color:rgba(6, 175, 133, 0.863);margin-right: 100px;">Total(TTC):</span>{{commande?.total_ttc}}</label>
+                                                            </div>
+                                                            <div class="col-7"><label class="amount-text">
+                                                                </label></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                    <div class="text-center p-2 ng-star-inserted"><i class="fas fa-exclamation-circle"
+                                            style="font-size: 80px;margin-top: 19px; color: red !important"></i>
+                                        <h2 class="swal2-title" id="swal2-title"
+                                            style="display: flex; margin-top:-40px ; margin-left: 76px;color: black;">
+                                            Êtes-vous sûr ?</h2>
+                                        <div id="swal2-content" style="display: block;color: black;">
+                                            Cette commande sera supprimée.</div>
+                                        <br>
+
+                                        <button
+                                            style="font-weight:bold;color: #fff;background-color:rgba(28, 192, 110, 0.808);margin-right: 10px; margin-bottom: 50px;"
+                                            id="closeModalButton" data-toggle="modal" data-target="#deleteModal"
+                                            class="btn btn-default" data-dismiss="modal">Annuler</button>
+                                        <a style="border: 0;
+                                border-radius: .25em;
+                                margin-bottom: 50px;
+                                background: initial;
+                                background-color:rgba(28, 192, 110, 0.808);
+                                color: #fff;
+                                font-size: 1.0625em;" class="btn btn-success" (click)="delete()">Approuver </a>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+        </div>
+        

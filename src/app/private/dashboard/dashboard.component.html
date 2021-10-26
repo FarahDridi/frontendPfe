@@ -1,0 +1,163 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+
+
+        <!-- Topbar -->
+        <app-topbar></app-topbar>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Accueil</h1>
+                <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+            </div>
+
+
+
+
+            <!-- Content Row -->
+
+
+
+            <!-- Content Row -->
+
+            <div class="row">
+
+
+                <div class="card h-75" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="hoho">
+                            <img class="fifi" src="/assets/img/logo.jpg" height="100px">
+                            <h3>{{dashboardForm.get('ent').value}}</h3>
+                            <h6>{{dashboardForm.get('nom').value}} {{dashboardForm.get('prenom').value}}</h6>
+                            <button routerLink="" class="btn btn-success btn-sm my-3">
+                                Tableau de bord
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Pie Chart -->
+                <div class="col">
+                    <div class="card shadow mb-4" style="width: 45rem;">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-dark">PERFORMANCE PAR UTILISATEUR :</h6>
+
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+
+
+                            <ul>
+                                <li><select class="form-control">
+                                        <option value="1">Tous</option>
+                                    </select></li>
+                                <li><select class="form-control">
+                                        <option value="1">janvier</option>
+                                        <option value="2">février</option>
+                                        <option value="3">mars</option>
+                                        <option value="4">avril</option>
+                                        <option value="5">mai</option>
+                                        <option value="6">juin</option>
+                                        <option value="7">juillet</option>
+                                        <option value="8">août</option>
+                                        <option value="9">septembre</option>
+                                        <option value="10">octobre</option>
+                                        <option value="11">novembre</option>
+                                        <option value="12">décembre</option>
+                                    </select></li>
+                                <li><select class="form-control">
+                                        <option value="1">2021</option>
+                                        <option value="2">2022</option>
+                                        <option value="3">2023</option>
+                                        <option value="4">2024</option>
+                                        <option value="5">2025</option>
+                                        <option value="6">2026</option>
+                                        <option value="7">2027</option>
+                                        <option value="8">2028</option>
+                                        <option value="9">2030</option>
+                                    </select></li>
+
+                            </ul>
+
+
+                            <img class="loul" src="/assets/img/user.jpg" alt="">
+                            <h5>{{dashboardForm.get('nom').value}} {{dashboardForm.get('prenom').value}}</h5>
+                            
+                            <p>{{dashboardForm.get('role').value}}</p>
+                            
+                            <br>
+                            <div class="card" style="width: 42.2rem; background-color:rgba(61, 245, 159, 0.096);">
+                                <div class="card-body">
+                                    <h4>Devis</h4>
+                                    <br>
+                                    {{dashboardForm.get('prenom').value}} a créé <span>Nb</span> Devis au mois de <span>mois</span>
+
+                                </div>
+                            </div>
+                            <br>
+                            <div class="card" style="width: 42.2rem; background-color:rgba(61, 245, 159, 0.096);">
+                                <div class="card-body">
+                                    <h4>Commandes</h4>
+                                    <br>
+                                    {{dashboardForm.get('prenom').value}} a créé <span>Nb</span> Cammandes au mois de <span>mois</span>
+
+                                </div>
+                            </div>
+                            <br>
+                            <div class="card" style="width: 42.2rem; background-color:rgba(61, 245, 159, 0.096);">
+                                <div class="card-body">
+                                    <h4>Factures</h4>
+                                    <br>
+                                    {{dashboardForm.get('prenom').value}} a créé <span>Nb</span> Facture(s) au mois de <span>mois</span>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+
+        </div> <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    Copyright &copy; Your Website 2021
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+</div>

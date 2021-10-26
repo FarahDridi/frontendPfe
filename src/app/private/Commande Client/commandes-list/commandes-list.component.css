@@ -1,0 +1,64 @@
+h1{
+    color:hsl(240, 51%, 62%);
+}
+h2{
+    color: gray;
+    padding-bottom: 15px;
+    padding-top: 50px;
+    padding-left: 10px;
+}
+body{
+    padding: 70px;
+}
+p{
+    float:right;
+    margin-right:25px;
+    margin-top: -10px;
+    
+}
+input{
+    border :2px solid lightgray ;
+    border-radius:10px;
+    margin-right:8px;
+    margin-left: 8px;
+    padding-left: 5px;
+    width:153px;
+}
+label{
+    color: black;
+}
+small{
+    text-decoration: rgba(192, 192, 192, 0.397);
+    font-weight: 200;
+}
+a {
+    color: rgba(128, 128, 128, 0.747);
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: 650;
+    
+  }
+
+
+.nav-link.active {
+    color: #41ad46c7;
+    font-weight: 900;
+    border-bottom: 2px solid #41ad46c7;
+    
+}
+
+
+
+.modal-dialog {
+    max-width: 400px;
+    margin: 1.75rem auto;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}

@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+            <a *ngIf="isAdmin" class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+
+                <i class="fas fa-cog  text-dark"></i>
+            </a>
+            <!-- Dropdown - User Information -->
+            <div  class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" routerLink="/cogent">
+                    <i class="fas fa-home fa-sm fa-fw mr-2 text-warning"></i>
+                    Entreprise
+                </a>
+                <!-- <a class="dropdown-item" routerLink="/cogdoc">
+                    <i class="far fa-file-alt fa-sm fa-fw mr-2 text-info"></i>
+                    Document
+                </a> -->
+                <!-- <a class="dropdown-item" routerLink="/taxe_tva">
+                    <i class="fas fa-dollar-sign fa-sm fa-fw mr-2 text-danger"></i>
+                    Taxe et TVA
+                </a> -->
+                <a class="dropdown-item" routerLink="/users/list">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-success"></i>
+                    Utilisateur
+                </a>
+
+            </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+
+            <i class="far fa-user text-dark"></i>
+        </a>
+        <!-- Dropdown - User Information -->
+        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+            
+            
+            <a class="dropdown-item" routerLink="/profile">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-success"></i>
+                Profil
+            </a>
+            
+            <a class="dropdown-item" routerLink="/signin" (click)="logout()">
+                <i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-danger"></i>
+                Déconnexion
+            </a>
+
+        </div>
+        </li>
+
+    </ul>
+
+</nav>

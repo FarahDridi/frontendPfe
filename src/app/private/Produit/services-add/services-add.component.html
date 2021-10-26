@@ -1,0 +1,279 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Nouveau produit</h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+
+                            <!-- Card Body -->
+                            <div class="card-body" style="padding:40px;">
+                                <h6 style="color: black;font-weight: bold;">INFORMATIONS</h6>
+                                <hr>
+
+                                <form [formGroup]="servicesAddForm" class="user" (ngsubmit)="serviceUser()">
+
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <label >Type de produit :</label>
+                                            <div class="areb">
+                                                <input type="radio" name="type" value="Materiel" id="Materiel" formControlName="type" (ngModelChange)="changeType($event)">
+                                                <label for="Materiel" class="inline"> <i
+                                                        class=" fas fa-cogs text-success"></i> Matériel</label>
+                                                <input type="radio" name="type" value="Service" id="Service" formControlName="type" (change)="changeType($event)">
+                                                <label for="Service" class="areb" class="inline"> <i
+                                                        class="fas fa-clipboard-check text-info"></i> Service</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <br>
+
+                                    <div style="margin-left: 2px;" class="row">
+                                        <div class="pp"><label for="lib">Libellé <span style="color: red;">*</span></label><input class="fais"
+                                                class="form-control" type="texte" formControlName="lib" size="53"
+                                                maxlength="40" id="exampleLib">
+
+                                                <div *ngIf="f.lib.touched && f.lib.invalid" class="text-danger">
+                                                    <div *ngIf="f.lib.errors.required">
+                                                        <small>* Champ obligatoire</small>
+                                                    </div>
+    
+                                                </div>
+
+
+                                        </div>
+
+                                        <div class="pp"><label for="categorie">Catégorie</label>
+                                            <input size="53" class="faiss" class="form-control" name="categorie" id="categorie" formControlName="categorie">
+                                               
+                                        </div>
+                                        
+
+
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <div class="pp"><label for="code">Code à barre</label><input class="fais"
+                                                    class="form-control" type="texte" name="code" size="53"
+                                                    maxlength="40" id="code" formControlName="code"></div>
+
+                                            <div class="pp"><label for="marque">Marque</label>
+                                                <input size="53" class="faiss" class="form-control" name="marque" id="marque" formControlName="marque">
+
+                                            </div>
+                                            
+
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="description">Description</label><textarea class="lou" class="form-control"
+                                            type="text" name="description" formControlName="description" size="50" id="description"></textarea>
+
+                                    </div>
+
+                                    <div class="toop">
+                                    <input #file style="color:rgba(192, 192, 192, 0.315);" type="file" accept="image/*" (change)="onFileChanged($event);preview(file.files)" formControlName="image" />
+                                    
+                                    <div   class="spec" >
+                                        <br>
+                                        <br>
+                                        <i style="margin-left: 95px;" class="fas fa-upload"></i>
+                                        <br>
+                                        <div style="margin-left:40px">Télécharger image</div>
+                                        <br>
+                                        <br>
+                                        <div style="margin-top: -150px;" *ngIf="imgURL">
+                                            <img style="width:220px;" [src]="imgURL" >
+                                        </div>
+
+                                    </div>
+                                    </div>
+                                    <br>
+
+                                    <fieldset>
+                                        <legend>Prix de vente</legend>
+
+                                        <div style="margin-left: 2px;" class="row">
+                                            <div class="pp"><label for="prix">Prix
+                                                    public <span style="color: red;">*</span></label>
+                                                <input class="form-control " (ngModelChange)="changeFn($event)" formControlName="prix" id="examplePrix"
+                                                    type="number" placeholder="Prix public" size="50">
+                                                    <div *ngIf="f.prix.touched && f.prix.errors" class="text-danger">
+                                                        <div *ngIf="prix.errors.required">
+                                                            <small>* Le prix unitaire est obligatoire</small>
+                                                        </div>
+    
+                                                    </div>
+                                            </div>
+
+
+                                            <div class="pp">
+                                                <div class="arebb">
+                                                    <input type="radio" name="tpe" [(ngModel)]="flag" value = "ttc" id="ttc" formControlName="tpe" (change)="changeTTC($event)">
+                                                    <label for="ttc" class="inline">TTC</label>
+                                                    <input type="radio" name="tpe" [(ngModel)]="flag" value = "ht" value="ht" id="ht"  formControlName="tpe"  (change)="changeHT($event)" >
+                                                    <label for="ht" class="areb" class="inline" >HT</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="zien">
+                                                <div class="text-center">
+                                                    <div style="background-color:rgba(242,242,242,0.47);">
+                                                        <div class="justify-content-center">
+                                                            <label for="resultat">Résultat:</label><br>
+                                                            <p class="ng-star-inserted" name="resultat_ht"  id="resultat_ht"><strong>{{pri|number}} TND HT</strong>
+                                                            </p>
+                                                            <p class="ng-star-inserted" name="resultat_ttc"  id="resultat_ttc"><strong
+                                                                    style="color: #53b306ef;">
+                                                                    {{res|number}} TND TTC</strong>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                        <div class="pp"><label for="unite">Unité</label>
+                                            <select 
+                                            class="faiss" 
+                                            class="form-control" 
+                                            name="unite" 
+                                            formControlName="unite" 
+                                            id="unite"
+                                            >
+                                                <option value="1"></option>
+                                                <option value="Piéce">Piéce</option>
+                                                <option value="Métre carré">Métre carré</option>
+                                                <option value="kilogramme">kilogramme</option>
+                                                <option value="Métre">Métre</option>
+                                                <option value="Jour">Jour</option>
+                                                <option value="Heure">Heure</option>
+                                                <option value="Kilométre">Kilométre</option>
+                                                <option value="Centimétre">Centimétre</option>
+                                                <option value="Mois">Mois</option>
+                                                <option value="Année">Année</option>
+                                                <option value="Quarter">Quarter</option>
+                                            </select>
+                                        </div>
+                                        <div class="pp"><label for="tva">TVA</label>
+                                            <select 
+                                            class="fai" 
+                                            class="form-control" 
+                                            name="tva" 
+                                            formControlName="tva" 
+                                            id="tva"
+                                            (ngModelChange)="changeTVA($event)">
+                                                <option value="1"></option>
+                                                <option value="0">0</option>
+                                                <option value="7">7</option>
+                                                <option value="13">13</option>
+                                                <option value="19">19</option>
+                                            </select>
+                                        </div>
+                                        <div class="pp"><label for="taxe">Taxes appliquée</label>
+                                            <select class="fais" class="form-control" formControlName="taxe" name="taxe" id="taxe">
+                                                <option value="0"></option>
+                                                <option value="FODEC">FODEC</option>
+
+                                            </select>
+                                        </div>
+
+                                    </fieldset>
+                                    <br>
+                                    
+
+                                    <div style="margin-top: 70px;margin-bottom: 70px; margin-left: 50px;">
+                                        <div class=" d-flex align-self-end"><button [disabled]="servicesAddForm.invalid"
+                                                class="btn btn-success" type="button" (click)="serviceUser()"
+                                                >Enregistrer</button> &nbsp; &nbsp;
+                                            <!----><button class="btn btn-light ng-star-inserted" type="button"
+                                                routerLink="/services/list"> Annuler
+                                            </button>&nbsp; &nbsp;
+                                            <!---->&nbsp;
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- /.container-fluid -->
+
+
+                        <!-- End of Main Content -->
+
+                        <!-- Footer -->
+                        <footer class="sticky-footer bg-white">
+                            <div class="container my-auto">
+                                <div class="copyright text-center my-auto">
+                                    <span>Copyright &copy; Your Website 2021</span>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- End of Footer -->
+
+
+                        <!-- End of Content Wrapper -->
+
+
+                        <!-- End of Page Wrapper -->
+
+                        <!-- Scroll to Top Button-->
+                        <a class="scroll-to-top rounded" href="#page-top">
+                            <i class="fas fa-angle-up"></i>
+                        </a>
+
+                        <!-- Logout Modal-->
+                        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">Select "Logout" below if you are ready to end
+                                        your current session.</div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button"
+                                            data-dismiss="modal">Cancel</button>
+                                        <a class="btn btn-primary" href="login.html">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>

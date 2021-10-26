@@ -1,0 +1,378 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Vente <small>/ Facture</small></h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-dark">Liste des factures</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <form
+                                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                    <div  class="input-group">
+                                        <input (input)="filter($event.target.value)" type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Recherche par mot clé" aria-label="Search"
+                                            aria-describedby="basic-addon2" size="60px">
+                                        <label for="date1"></label><input type="Date" name="date1" size="5"
+                                            maxlength="40" id="date1">
+                                        <label for="date2"></label><input type="Date" name="date2" size="5"
+                                            maxlength="40" id="date2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-success" type="button">
+                                                <i class="fas fa-search fa-sm "></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+
+
+                                <p><button style="margin-top:10px;" class="btn btn-success" type="submit"
+                                        routerLink="/factures/add"><i class="fa fa-plus"></i> Ajouter</button></p>
+                                <h2></h2>
+                                <ul _ngcontent-yjf-c31="" class="nav-tabs nav" ngbnav="" role="tablist">
+                                    <li _ngcontent-yjf-c31="" ngbnavitem="" class="nav-item"><a _ngcontent-yjf-c31=""
+                                            ngbnavlink="" id="ngb-nav-38"
+                                            class="nav-link active" role="tab" aria-controls="ngb-nav-38-panel"
+                                            aria-selected="true" aria-disabled="false"> Factures ({{facturesList.length}})</a></li>
+                            
+                                </ul>
+                                <div _ngcontent-olm-c18="" _nghost-olm-c20="">
+                                    <nav _ngcontent-olm-c20="" class="arrow" id="menu-container">
+
+                                        <div _ngcontent-olm-c20="" class="menu-inner-box">
+                                            <div _ngcontent-olm-c20="" class="menu btn-group">
+                                                <!---->
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> janvier </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> février </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light active"
+                                                    type="button"> mars </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> avril </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> mai </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> juin </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> juillet </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> août </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> septembre </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> octobre </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> novembre </button>
+                                                <!----><button _ngcontent-olm-c20="" class="btn btn-light"
+                                                    type="button"> décembre </button>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div *ngIf="facturesList.length==0" class="alert alert-warning">aucune facture
+                                            trouvée
+                                        </div>
+                                        <table *ngIf="facturesList.length>0" class="table table-sm">
+                                            <thead style="background-color:#0e5355;color: white; font-size: 12px;">
+                                                <tr>
+                                                    <th>Référence</th>
+                                                    <th>Date</th>
+                                                    <th>Client</th>
+                                                    <th>Montant TTC</th>
+                                                    <th>Montant HT</th>
+                                                    <th>Montant restant</th>
+                                                    <th>Echéance</th>
+                                                    <th>Etat</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let facture of facturesList; let i = index ;">
+                                                    <th>FAC-0000{{i+1}}</th>
+                                                    <td>{{facture.date | date:'dd/MM/yyyy'}}</td>
+                                                    <td>{{facture.client}}</td>
+                                                    <td>{{facture.montantttc}}</td>
+                                                    <td>{{facture.montantht}}</td>
+                                                    <td>{{facture.montantres}}</td>
+                                                    <td>{{facture.echeance}}</td>
+                                                    <td style="margin-top: 8px;color: white;" class="badge badge-primary">{{facture.etat}}</td>
+
+
+                                                    <th>
+                                                        <a href="#" data-toggle="modal" data-target="#logModal">
+                                                            <button routerLink="/factures/details"
+                                                                class="btn btn-sm btn-warning">
+                                                                <i class="fa fa-eye"></i>
+                                                            </button>
+                                                        </a>
+
+                                                        <button class="btn btn-sm btn-info mx-2" (click)="updateFacture(i)">
+                                                            <i class="fa fa-pen"></i>
+                                                        </button>
+
+                                                        <a href="#" data-toggle="modal" data-target="#deleteModal">
+                                                            <button style="margin-right: 8px;" (click)="deleteRow(facture)"
+                                                                class="btn btn-sm btn-danger">
+                                                                <i class="fas fa-trash"></i>
+                                                            </button>
+                                                        </a>
+
+                                                        <button style="margin-right: 8px;" class="btn btn-sm btn-success ">
+                                                            <i class="fas fa-dollar-sign"></i>
+                                                        </button>
+
+                                                        <button class="btn btn-sm btn-success">
+                                                            <i class="far fa-file-pdf"></i>
+                                                        </button>
+
+                                                    </th>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                                <div _ngcontent-ykg-c20="" class="text-center p-2 ng-star-inserted"><i
+                                    _ngcontent-ykg-c20="" class="fas fa-exclamation-circle"
+                                    style="font-size: 80px;margin-top: 19px; color: red !important"></i>
+                                <h2 class="swal2-title" id="swal2-title"
+                                    style="display: flex; margin-top:-40px ; margin-left: 76px;color: black;">
+                                    Êtes-vous sûr ?</h2>
+                                <div id="swal2-content" style="display: block;color: black;">
+                                    Cette facture sera supprimée.</div>
+                                <br>
+
+                                <button style="font-weight:bold;color: #fff;background-color:rgba(28, 192, 110, 0.808);margin-right: 10px; margin-bottom: 50px;"  id="closeModalButton" data-toggle="modal"data-target="#deleteModal" class="btn btn-default"                          
+                                        data-dismiss="modal">Annuler</button>
+                                <a style="border: 0;
+                                border-radius: .25em;
+                                margin-bottom: 50px;
+                                background: initial;
+                                background-color:rgba(28, 192, 110, 0.808);
+                                color: #fff;
+                                font-size: 1.0625em;" class="btn btn-success" (click)="delete()" >Approuver </a>
+
+
+
+                            </div>
+                                    
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal" id="logModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dial" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Aperçu</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+
+                                    <div _ngcontent-waf-c20="" class="modal-body">
+                                        <div _ngcontent-waf-c20="" class="row justify-content-center">
+                                            <div _ngcontent-waf-c20="" class="col-12 col-md-4">
+                                                <div _ngcontent-waf-c20="" class="row m-t-10 m-b-10"><span
+                                                        _ngcontent-waf-c20=""
+                                                        class="col-12 title-quick-view">Information Client :</span>
+                                                </div>
+                                                <div _ngcontent-waf-c20="" class="row">
+                                                    <div _ngcontent-waf-c20="" class="col-6 type-doperation"><label
+                                                            _ngcontent-waf-c20="">Client :</label></div>
+                                                    <!---->
+                                                    <div _ngcontent-waf-c20=""
+                                                        class="col-6 type-doperation ng-star-inserted"><label
+                                                            _ngcontent-waf-c20=""> salma</label></div>
+                                                </div>
+                                                <div _ngcontent-waf-c20="" class="row">
+                                                    <div _ngcontent-waf-c20="" class="col-6 type-doperation"><label
+                                                            _ngcontent-waf-c20="">Téléphone :</label></div>
+                                                    <!---->
+                                                    <div _ngcontent-waf-c20=""
+                                                        class="col-6 type-doperation ng-star-inserted"><label
+                                                            _ngcontent-waf-c20=""></label></div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-waf-c20="" class="col-12 col-md-7">
+                                                <div _ngcontent-waf-c20="" class="row m-t-10 m-b-10"><span
+                                                        _ngcontent-waf-c20=""
+                                                        class="col-12 title-quick-view">Information Document :</span>
+                                                </div>
+                                                <div _ngcontent-waf-c20="" class="row">
+                                                    <div _ngcontent-waf-c20="" class="col-md-5 col-12">
+                                                        <div _ngcontent-waf-c20="" class="row">
+                                                            <div _ngcontent-waf-c20="" class="col-5 type-doperation">
+                                                                <label _ngcontent-waf-c20="">Etat :</label>
+                                                            </div>
+                                                            <div _ngcontent-waf-c20="" class="col-7 type-doperation">
+                                                                <!---->
+                                                                <!---->
+                                                                <!---->
+                                                                <!----><span _ngcontent-waf-c20=""
+                                                                    class="badge badge-pill badge-warning ng-star-inserted">
+                                                                    <!---->
+                                                                    <!---->
+                                                                    <!----> Non payé
+                                                                    <!---->
+                                                                </span>
+                                                                <!---->
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-waf-c20="" class="row">
+                                                            <div _ngcontent-waf-c20="" class="col-5 type-doperation">
+                                                                <label _ngcontent-waf-c20=""
+                                                                    class="text-nowrap">Référence :</label>
+                                                            </div>
+                                                            <div _ngcontent-waf-c20="" class="col-7 type-doperation">
+                                                                <label _ngcontent-waf-c20="">FAC-000001</label>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-waf-c20="" class="row">
+                                                            <div _ngcontent-waf-c20="" class="col-5 type-doperation">
+                                                                <label _ngcontent-waf-c20="">Date :</label>
+                                                            </div>
+                                                            <div _ngcontent-waf-c20="" class="col-7 type-doperation">
+                                                                <label _ngcontent-waf-c20=""> 4 avr. 2021</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div _ngcontent-waf-c20="" class="col-md-7 col-12">
+                                                        <div _ngcontent-waf-c20="" class="row">
+                                                            <div _ngcontent-waf-c20="" class="col-5 type-doperation">
+                                                                <label _ngcontent-waf-c20="" class="text-nowrap">Date
+                                                                    d'échéance :</label>
+                                                            </div>
+                                                            <div _ngcontent-waf-c20="" class="col-7 type-doperation">
+                                                                <label _ngcontent-waf-c20=""> 4 mai 2021 </label>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-waf-c20="" class="row">
+                                                            <div _ngcontent-waf-c20="" class="col-5 type-doperation">
+                                                                <label _ngcontent-waf-c20="">Total (HT) :</label>
+                                                            </div>
+                                                            <div _ngcontent-waf-c20="" class="col-7 type-doperation">
+                                                                <label _ngcontent-waf-c20="" class="amount-text">
+                                                                    1&nbsp;896,000&nbsp;TND </label>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-waf-c20="" class="row">
+                                                            <div _ngcontent-waf-c20="" class="col-5 type-doperation">
+                                                                <label _ngcontent-waf-c20="">Total (TTC) :</label>
+                                                            </div>
+                                                            <div _ngcontent-waf-c20="" class="col-7"><label
+                                                                    _ngcontent-waf-c20="" class="amount-text">
+                                                                    1&nbsp;896,600&nbsp;TND </label></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        <div _ngcontent-waf-c20="" class="row justify-content-center ng-star-inserted">
+                                            <span _ngcontent-waf-c20="" class="col-11 title-quick-view m-b-10">
+                                                Historique de paiement</span>
+                                            <div _ngcontent-waf-c20="" class="col-11">
+                                                <table _ngcontent-waf-c20="" class="table text-center border-table">
+                                                    <thead _ngcontent-waf-c20="" class="header">
+                                                        <tr _ngcontent-waf-c20="">
+                                                            <th _ngcontent-waf-c20="">#</th>
+                                                            <th _ngcontent-waf-c20="">Référence</th>
+                                                            <th _ngcontent-waf-c20="">Utilisateur</th>
+                                                            <th _ngcontent-waf-c20="">Mode de paiement</th>
+                                                            <th _ngcontent-waf-c20="">Date</th>
+                                                            <th _ngcontent-waf-c20="">Montant</th>
+                                                            <th _ngcontent-waf-c20="">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody _ngcontent-waf-c20="">
+                                                        <!---->
+                                                        <!---->
+                                                        <tr _ngcontent-waf-c20="" class="ng-star-inserted">
+                                                            <td _ngcontent-waf-c20="" class="text-right text-table"
+                                                                colspan="5"> Total <b _ngcontent-waf-c20="">4 mai
+                                                                    2021</b></td>
+                                                            <td _ngcontent-waf-c20=""
+                                                                class="amount-text text-center text-danger">
+                                                                1&nbsp;896,600&nbsp;TND </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+       

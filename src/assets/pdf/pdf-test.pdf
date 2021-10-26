@@ -1,0 +1,810 @@
+ <div _nghost-yfe-c0="" ng-version="8.0.1">
+                                                                        <div _ngcontent-yfe-c0="" _nghost-yfe-c1="">
+                                                                            <!---->
+                                                                        </div>
+                                                                        <router-outlet _ngcontent-yfe-c0="">
+                                                                        </router-outlet>
+                                                                        <div _nghost-yfe-c2="">
+                                                                            <div _ngcontent-yfe-c2=""
+                                                                                class="dark-body-only"
+                                                                                id="outer-container">
+                                                                                <div _ngcontent-yfe-c2=""
+                                                                                    class="page-wrapper default"
+                                                                                    id="canvas-bookmark">
+
+                                                                                    <div _ngcontent-yfe-c2=""
+                                                                                        class="page-body-wrapper default">
+
+                                                                                        <div _ngcontent-yfe-c2=""
+                                                                                            class="page-body">
+                                                                                            <main _ngcontent-yfe-c2="">
+                                                                                                <router-outlet
+                                                                                                    _ngcontent-yfe-c2="">
+                                                                                                </router-outlet>
+                                                                                                <div _nghost-yfe-c25=""
+                                                                                                    class="ng-star-inserted">
+                                                                                                    <!---->
+                                                                                                    <!---->
+                                                                                                    <!---->
+                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                        class="container-fluid ng-star-inserted">
+                                                                                                        <!---->
+                                                                                                        <div _ngcontent-yfe-c25=""
+                                                                                                            class="row justify-content-center ng-star-inserted">
+                                                                                                            <div _ngcontent-yfe-c25=""
+                                                                                                                class="card col-md-10 col-11 shadow-lg shadow-showcase water-marka">
+                                                                                                                <div _ngcontent-yfe-c25=""
+                                                                                                                    class="row p-3 d-md-none d-block">
+                                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                                        class="col-md-5 m-t-20 col-12">
+                                                                                                                        <!---->
+                                                                                                                        <h3 _ngcontent-yfe-c25=""
+                                                                                                                            class="text-muted mt-4 ng-star-inserted"
+                                                                                                                            style="text-align: center; font-size: 34px">
+                                                                                                                            <!---->
+                                                                                                                            <!---->
+                                                                                                                        </h3>
+                                                                                                                        <!---->
+                                                                                                                    </div>
+                                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                                        class="col-md-5 m-t-20 col-12">
+                                                                                                                        <div _ngcontent-yfe-c25=""
+                                                                                                                            _nghost-yfe-c27="">
+                                                                                                                            <!---->
+                                                                                                                            <div _ngcontent-yfe-c27=""
+                                                                                                                                class="d-flex justify-content-center ng-star-inserted">
+                                                                                                                                <!---->
+                                                                                                                                <!----><img
+                                                                                                                                    style="border:1px solid rgb(230, 222, 222);"
+                                                                                                                                    _ngcontent-yfe-c27=""
+                                                                                                                                    class="invoiceLogo ng-star-inserted"
+                                                                                                                                    height="150px"
+                                                                                                                                    src="/assets/img/logo.jpg">
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div _ngcontent-yfe-c25=""
+                                                                                                                    class="row p-3 justify-content-between d-md-block d-none">
+                                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                                        class="col-md-12 m-t-50 col-12">
+                                                                                                                        <!---->
+                                                                                                                        <h3 _ngcontent-yfe-c25=""
+                                                                                                                            class="text-muted mt-4 ng-star-inserted"
+                                                                                                                            style="text-align: right; font-size: 34px">
+                                                                                                                            <!---->
+                                                                                                                            <!---->
+                                                                                                                            DEVIS
+                                                                                                                        </h3>
+                                                                                                                        <!---->
+                                                                                                                    </div>
+                                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                                        class="col-md-5 m-t-20 col-12">
+                                                                                                                        <div _ngcontent-yfe-c25=""
+                                                                                                                            _nghost-yfe-c27="">
+                                                                                                                            <!---->
+                                                                                                                            <div _ngcontent-yfe-c27=""
+                                                                                                                                class="d-flex justify-content-center ng-star-inserted">
+                                                                                                                                <!---->
+                                                                                                                                <!----><img
+                                                                                                                                    style="border:1px solid rgb(230, 222, 222);"
+                                                                                                                                    _ngcontent-yfe-c27=""
+                                                                                                                                    class="invoiceLogo ng-star-inserted"
+                                                                                                                                    height="150px"
+                                                                                                                                    src="/assets/img/logo.jpg">
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div _ngcontent-yfe-c25=""
+                                                                                                                    class="row p-3 justify-content-between">
+                                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                                        class="col-md-5 m-t-20 col-12">
+                                                                                                                        <div _ngcontent-yfe-c25=""
+                                                                                                                            _nghost-yfe-c28="">
+                                                                                                                            <!---->
+                                                                                                                            <div _ngcontent-yfe-c28=""
+                                                                                                                                class="panel panel-alt ng-star-inserted"
+                                                                                                                                id="clientDiv">
+                                                                                                                                <div _ngcontent-yfe-c28=""
+                                                                                                                                    class="panel-heading d-flex">
+                                                                                                                                    <!----><span
+                                                                                                                                        _ngcontent-yfe-c28=""
+                                                                                                                                        class="invoice-logo-text lh10 p-2 p-l-0 text-muted ng-binding ng-star-inserted">
+                                                                                                                                        Client:
+                                                                                                                                    </span>
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <div _ngcontent-yfe-c28=""
+                                                                                                                                        class="ng-autocomplete ng-star-inserted">
+                                                                                                                                        <div _ngcontent-yfe-c28=""
+                                                                                                                                            class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                                                                            <div
+                                                                                                                                                class="autocomplete-container">
+                                                                                                                                                <div
+                                                                                                                                                    class="input-container">
+
+                                                                                                                                                </div>
+                                                                                                                                                <div
+                                                                                                                                                    class="suggestions-container is-hidden">
+                                                                                                                                                    <ul>
+                                                                                                                                                        <!---->
+                                                                                                                                                    </ul>
+                                                                                                                                                </div>
+                                                                                                                                                <div
+                                                                                                                                                    class="suggestions-container is-visible">
+                                                                                                                                                    <!---->
+                                                                                                                                                    <ul>
+                                                                                                                                                        <!---->
+                                                                                                                                                    </ul>
+                                                                                                                                                </div>
+                                                                                                                                                <!---->
+                                                                                                                                            </div>
+                                                                                                                                            <!---->
+                                                                                                                                        </div>
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                    </div>
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <!----><span
+                                                                                                                                        _ngcontent-yfe-c28=""
+                                                                                                                                        class="p-2 d-md-none d-flex"><i
+                                                                                                                                            _ngcontent-yfe-c28=""
+                                                                                                                                            class="icon-angle-down"></i></span>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <!---->
+                                                                                                                            <div _ngcontent-yfe-c28=""
+                                                                                                                                class="panel-body div-customer ng-star-inserted">
+                                                                                                                                <hr _ngcontent-yfe-c28=""
+                                                                                                                                    style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                                                                                <!---->
+                                                                                                                            </div>
+                                                                                                                            <!---->
+                                                                                                                            <!---->
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                                        class="col-md-5 m-t-20 col-12">
+                                                                                                                        <div _ngcontent-yfe-c25=""
+                                                                                                                            _nghost-yfe-c29="">
+                                                                                                                            <div _ngcontent-yfe-c29=""
+                                                                                                                                class="panel panel-alt ng-untouched ng-pristine ng-valid">
+                                                                                                                                <div _ngcontent-yfe-c29=""
+                                                                                                                                    class="panel-heading p-2">
+                                                                                                                                    <span
+                                                                                                                                        _ngcontent-yfe-c29=""
+                                                                                                                                        class="invoice-logo-text lh10 text-muted ng-binding p-2 p-l-0">
+                                                                                                                                        Détails
+                                                                                                                                        du
+                                                                                                                                        document
+                                                                                                                                    </span>
+                                                                                                                                    <div _ngcontent-yfe-c29=""
+                                                                                                                                        class="panel-btns pull-right ml10">
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                                <div _ngcontent-yfe-c29=""
+                                                                                                                                    class="panel-body">
+                                                                                                                                    <hr _ngcontent-yfe-c29=""
+                                                                                                                                        class="mt-4 mb-4"
+                                                                                                                                        style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <div _ngcontent-yfe-c29=""
+                                                                                                                                        class="row m-b-5 form-group">
+                                                                                                                                        <label
+                                                                                                                                            _ngcontent-yfe-c29=""
+                                                                                                                                            class="col-4 col-form-label">Date
+                                                                                                                                            du
+                                                                                                                                            document</label>
+                                                                                                                                        <div _ngcontent-yfe-c29=""
+                                                                                                                                            class="col-8">
+                                                                                                                                            <!---->
+                                                                                                                                            <!---->
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <div _ngcontent-yfe-c29=""
+                                                                                                                                        class="row m-b-5 form-group ">
+                                                                                                                                        <label
+                                                                                                                                            _ngcontent-yfe-c29=""
+                                                                                                                                            class="col-4 col-form-label">Projet
+                                                                                                                                            :</label>
+
+
+                                                                                                                                        <div _ngcontent-yfe-c28=""
+                                                                                                                                            class="ng-autocomplete ng-star-inserted">
+                                                                                                                                            <div _ngcontent-yfe-c28=""
+                                                                                                                                                class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                                                                                <div
+                                                                                                                                                    class="autocomplete-container">
+                                                                                                                                                    <div style="margin-top: -41px;margin-left: 128px;"
+                                                                                                                                                        class="input-container">
+
+                                                                                                                                                    </div>
+                                                                                                                                                    <div
+                                                                                                                                                        class="suggestions-container is-hidden">
+                                                                                                                                                        <ul>
+                                                                                                                                                            <!---->
+                                                                                                                                                        </ul>
+                                                                                                                                                    </div>
+                                                                                                                                                    <div
+                                                                                                                                                        class="suggestions-container is-visible">
+                                                                                                                                                        <!---->
+                                                                                                                                                        <ul>
+                                                                                                                                                            <!---->
+                                                                                                                                                        </ul>
+                                                                                                                                                    </div>
+                                                                                                                                                    <!---->
+                                                                                                                                                </div>
+                                                                                                                                                <!---->
+                                                                                                                                            </div>
+                                                                                                                                            <!---->
+                                                                                                                                            <!---->
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                    <div _ngcontent-yfe-c29=""
+                                                                                                                                        class="row m-b-5 form-group">
+                                                                                                                                        <label
+                                                                                                                                            _ngcontent-yfe-c29=""
+                                                                                                                                            class="col-4 col-form-label"
+                                                                                                                                            for="inputDate">Note
+                                                                                                                                            :</label>
+                                                                                                                                        <div _ngcontent-yfe-c28=""
+                                                                                                                                            class="ng-autocomplete ng-star-inserted">
+                                                                                                                                            <div _ngcontent-yfe-c28=""
+                                                                                                                                                class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                                                                                <div
+                                                                                                                                                    class="autocomplete-container">
+                                                                                                                                                    <div style="margin-top: -41px;margin-left: 128px;"
+                                                                                                                                                        class="input-container">
+
+                                                                                                                                                    </div>
+                                                                                                                                                    <div
+                                                                                                                                                        class="suggestions-container is-hidden">
+                                                                                                                                                        <ul>
+                                                                                                                                                            <!---->
+                                                                                                                                                        </ul>
+                                                                                                                                                    </div>
+                                                                                                                                                    <div
+                                                                                                                                                        class="suggestions-container is-visible">
+                                                                                                                                                        <!---->
+                                                                                                                                                        <ul>
+                                                                                                                                                            <!---->
+                                                                                                                                                        </ul>
+                                                                                                                                                    </div>
+                                                                                                                                                    <!---->
+                                                                                                                                                </div>
+                                                                                                                                                <!---->
+                                                                                                                                            </div>
+                                                                                                                                            <!---->
+                                                                                                                                            <!---->
+                                                                                                                                        </div>
+
+
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <!---->
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div _ngcontent-yfe-c25=""
+                                                                                                                    class="row p-3 justify-content-center">
+                                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                                        class="col-12 m-t-20">
+                                                                                                                        <div _ngcontent-yfe-c25=""
+                                                                                                                            _nghost-yfe-c30="">
+                                                                                                                            <div _ngcontent-yfe-c30=""
+                                                                                                                                class="ng-untouched ng-pristine ng-valid">
+                                                                                                                                <table
+                                                                                                                                    _ngcontent-tsg-c58=""
+                                                                                                                                    _ngcontent-yfe-c30=""
+                                                                                                                                    class="table table-bordered table-document">
+                                                                                                                                    <thead
+                                                                                                                                        _ngcontent-tsg-c58=""
+                                                                                                                                        _ngcontent-yfe-c30=""
+                                                                                                                                        class="cf"
+                                                                                                                                        style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                                                                                        <tr _ngcontent-tsg-c58=""
+                                                                                                                                            _ngcontent-yfe-c30="">
+
+                                                                                                                                            <th _ngcontent-tsg-c58=""
+                                                                                                                                                _ngcontent-yfe-c30=""
+                                                                                                                                                class="th-designation">
+                                                                                                                                                Désignation
+                                                                                                                                            </th>
+                                                                                                                                            <th _ngcontent-tsg-c58=""
+                                                                                                                                                _ngcontent-yfe-c30=""
+                                                                                                                                                class="th-150 ng-star-inserted">
+                                                                                                                                                Quantité
+                                                                                                                                            </th>
+                                                                                                                                            <th _ngcontent-tsg-c58=""
+                                                                                                                                                _ngcontent-yfe-c30=""
+                                                                                                                                                class="th-200 ng-star-inserted">
+                                                                                                                                                Prix
+                                                                                                                                                HT
+                                                                                                                                            </th>
+                                                                                                                                            <th _ngcontent-tsg-c58=""
+                                                                                                                                                _ngcontent-yfe-c30=""
+                                                                                                                                                class="th-150 ng-star-inserted">
+                                                                                                                                                Unité
+                                                                                                                                            </th>
+                                                                                                                                            <th _ngcontent-tsg-c58=""
+                                                                                                                                                _ngcontent-yfe-c30=""
+                                                                                                                                                class="th-150 ng-star-inserted">
+                                                                                                                                                TVA
+                                                                                                                                            </th>
+                                                                                                                                            <th _ngcontent-tsg-c58=""
+                                                                                                                                                _ngcontent-yfe-c30=""
+                                                                                                                                                class="th-200 ng-star-inserted">
+                                                                                                                                                Total
+                                                                                                                                                HT
+                                                                                                                                            </th>
+
+                                                                                                                                        </tr>
+                                                                                                                                    </thead>
+                                                                                                                                    <tbody
+                                                                                                                                        _ngcontent-mug-c16=""
+                                                                                                                                        dragula="HANDLES">
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+
+
+
+
+
+
+
+
+                                                                                                                                        <tr _ngcontent-mug-c16=""
+                                                                                                                                            class="detail-tr ng-untouched ng-pristine ng-valid ng-star-inserted"
+                                                                                                                                            data-color="#000000"
+                                                                                                                                            data-order="0"
+                                                                                                                                            id="0">
+                                                                                                                                            <!---->
+                                                                                                                                            <td _ngcontent-mug-c16=""
+                                                                                                                                                class="th-designation"
+                                                                                                                                                data-title="Désignation">
+                                                                                                                                                <!---->
+                                                                                                                                                <div _ngcontent-mug-c16=""
+                                                                                                                                                    _nghost-mug-c35=""
+                                                                                                                                                    class="ng-star-inserted">
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                    <div _ngcontent-mug-c35=""
+                                                                                                                                                        class="d-flex ng-star-inserted">
+                                                                                                                                                        <!----><span
+                                                                                                                                                            _ngcontent-mug-c35=""
+                                                                                                                                                            style="width: 100px;"
+                                                                                                                                                            class="ng-star-inserted">
+                                                                                                                                                            12345</span>
+                                                                                                                                                        <div _ngcontent-mug-c35=""
+                                                                                                                                                            class="d-flex flex-column flex-fill">
+                                                                                                                                                            <div
+                                                                                                                                                                _ngcontent-mug-c35="">
+                                                                                                                                                                <!----><span
+                                                                                                                                                                    _ngcontent-mug-c35=""
+                                                                                                                                                                    class="ng-star-inserted">
+                                                                                                                                                                    site
+                                                                                                                                                                    web
+                                                                                                                                                                </span>
+                                                                                                                                                                <!---->
+                                                                                                                                                            </div>
+                                                                                                                                                            <!---->
+                                                                                                                                                            <!---->
+                                                                                                                                                            <!---->
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                    <!---->
+                                                                                                                                                </div>
+                                                                                                                                            </td>
+                                                                                                                                            <!---->
+                                                                                                                                            <!---->
+                                                                                                                                            <td _ngcontent-mug-c16=""
+                                                                                                                                                data-title="Quantité"
+                                                                                                                                                class="ng-star-inserted">
+                                                                                                                                                <!---->
+                                                                                                                                                <!----><span
+                                                                                                                                                    _ngcontent-mug-c16=""
+                                                                                                                                                    class="ng-star-inserted">
+                                                                                                                                                    1
+                                                                                                                                                    <!---->
+                                                                                                                                                </span>
+                                                                                                                                                <!---->
+                                                                                                                                            </td>
+                                                                                                                                            <!---->
+                                                                                                                                            <td _ngcontent-mug-c16=""
+                                                                                                                                                title="Prix HT"
+                                                                                                                                                class="ng-star-inserted">
+                                                                                                                                                <div _ngcontent-mug-c16=""
+                                                                                                                                                    class="input-group">
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                </div>
+                                                                                                                                                <!----><span
+                                                                                                                                                    _ngcontent-mug-c16=""
+                                                                                                                                                    class="ng-star-inserted">
+                                                                                                                                                    1&nbsp;256,000&nbsp;TND
+                                                                                                                                                </span>
+                                                                                                                                            </td>
+                                                                                                                                            <!---->
+                                                                                                                                            <!---->
+                                                                                                                                            <!---->
+                                                                                                                                            <td _ngcontent-mug-c16=""
+                                                                                                                                                title="Unité"
+                                                                                                                                                class="ng-star-inserted">
+                                                                                                                                                <div _ngcontent-mug-c16=""
+                                                                                                                                                    class="input-group">
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                    <!---->
+                                                                                                                                                </div>
+                                                                                                                                                <!----><span
+                                                                                                                                                    _ngcontent-mug-c16=""
+                                                                                                                                                    class="ng-star-inserted">
+                                                                                                                                                    piéce
+                                                                                                                                                </span>
+                                                                                                                                            </td>
+                                                                                                                                            <!---->
+                                                                                                                                            <!---->
+                                                                                                                                            <!---->
+                                                                                                                                            <td _ngcontent-mug-c16=""
+                                                                                                                                                data-title="TVA"
+                                                                                                                                                class="ng-star-inserted">
+                                                                                                                                                <!---->
+                                                                                                                                                <!----><span
+                                                                                                                                                    _ngcontent-mug-c16=""
+                                                                                                                                                    class="ng-star-inserted">
+                                                                                                                                                    0
+                                                                                                                                                </span>
+                                                                                                                                            </td>
+                                                                                                                                            <!---->
+                                                                                                                                            <td _ngcontent-mug-c16=""
+                                                                                                                                                data-title="Total HT"
+                                                                                                                                                class="ng-star-inserted">
+                                                                                                                                                1&nbsp;256,000&nbsp;TND
+                                                                                                                                            </td>
+                                                                                                                                            <!---->
+                                                                                                                                        </tr>
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                        <!---->
+                                                                                                                                    </tbody>
+                                                                                                                                </table>
+                                                                                                                            </div>
+                                                                                                                            <!---->
+                                                                                                                        </div>
+                                                                                                                        <div _ngcontent-yfe-c25=""
+                                                                                                                            _nghost-yfe-c31="">
+
+                                                                                                                            <div _ngcontent-yfe-c31=""
+                                                                                                                                class="d-flex justify-content-center d-md-none ng-star-inserted">
+                                                                                                                                <div _ngcontent-yfe-c31=""
+                                                                                                                                    class="d-inline-block p-2 dropdown"
+                                                                                                                                    ngbdropdown=""
+                                                                                                                                    role="group">
+                                                                                                                                    <button
+                                                                                                                                        _ngcontent-yfe-c31=""
+                                                                                                                                        aria-haspopup="true"
+                                                                                                                                        class="btn btn-outline-primary dropdown-toggle"
+                                                                                                                                        id="dropdownBasic1"
+                                                                                                                                        ngbdropdowntoggle=""
+                                                                                                                                        aria-expanded="false">
+                                                                                                                                        Ajouter
+                                                                                                                                    </button>
+                                                                                                                                    <div _ngcontent-yfe-c31=""
+                                                                                                                                        aria-labelledby="dropdownBasic1"
+                                                                                                                                        ngbdropdownmenu=""
+                                                                                                                                        class="dropdown-menu"
+                                                                                                                                        x-placement="bottom-left">
+                                                                                                                                        <button
+                                                                                                                                            _ngcontent-yfe-c31=""
+                                                                                                                                            class="dropdown-item">
+                                                                                                                                            Ajouter
+                                                                                                                                            Produit</button><button
+                                                                                                                                            _ngcontent-yfe-c31=""
+                                                                                                                                            class="dropdown-item">
+                                                                                                                                            Ajouter
+                                                                                                                                            Texte
+                                                                                                                                        </button><button
+                                                                                                                                            _ngcontent-yfe-c31=""
+                                                                                                                                            class="dropdown-item">
+                                                                                                                                            Ajouter
+                                                                                                                                            Section
+                                                                                                                                        </button><button
+                                                                                                                                            _ngcontent-yfe-c31=""
+                                                                                                                                            class="dropdown-item">
+                                                                                                                                            Ajouter
+                                                                                                                                            Séparateur
+                                                                                                                                        </button><button
+                                                                                                                                            _ngcontent-yfe-c31=""
+                                                                                                                                            class="dropdown-item">
+                                                                                                                                            Ajouter
+                                                                                                                                            Sous-total
+                                                                                                                                        </button>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                    style="margin-left: 100px;margin-top: -7px;">
+                                                                                                                    <div _ngcontent-mug-c12=""
+                                                                                                                        class="col-md-4 m-t-20 col-12">
+                                                                                                                    </div>
+                                                                                                                    <div _ngcontent-mug-c12=""
+                                                                                                                        class="col-md-4 m-t-20 col-12">
+                                                                                                                        <!---->
+                                                                                                                        <div _ngcontent-mug-c12=""
+                                                                                                                            _nghost-mug-c18=""
+                                                                                                                            class="ng-star-inserted">
+                                                                                                                            <!---->
+                                                                                                                            <table
+                                                                                                                                _ngcontent-mug-c18=""
+                                                                                                                                class="table table-bordered ng-star-inserted">
+                                                                                                                                <thead
+                                                                                                                                    _ngcontent-mug-c18=""
+                                                                                                                                    style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                                                                                    <tr
+                                                                                                                                        _ngcontent-mug-c18="">
+                                                                                                                                        <th
+                                                                                                                                            _ngcontent-mug-c18="">
+                                                                                                                                            TVA
+                                                                                                                                        </th>
+                                                                                                                                        <th
+                                                                                                                                            _ngcontent-mug-c18="">
+                                                                                                                                            Base
+                                                                                                                                        </th>
+                                                                                                                                        <th
+                                                                                                                                            _ngcontent-mug-c18="">
+                                                                                                                                            Montant
+                                                                                                                                        </th>
+
+                                                                                                                                    </tr>
+                                                                                                                                </thead>
+                                                                                                                                <tbody
+                                                                                                                                    _ngcontent-mug-c18="">
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <tr _ngcontent-mug-c18=""
+                                                                                                                                        class="ng-star-inserted">
+                                                                                                                                        <td _ngcontent-mug-c18=""
+                                                                                                                                            scope="row">
+                                                                                                                                            0
+                                                                                                                                            %
+                                                                                                                                        </td>
+                                                                                                                                        <td
+                                                                                                                                            _ngcontent-mug-c18="">
+                                                                                                                                            1&nbsp;256,000&nbsp;TND
+                                                                                                                                        </td>
+                                                                                                                                        <td
+                                                                                                                                            _ngcontent-mug-c18="">
+                                                                                                                                            0,000&nbsp;TND
+                                                                                                                                        </td>
+                                                                                                                                    </tr>
+                                                                                                                                </tbody>
+                                                                                                                            </table>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                    style="margin-left: 430px;margin-top: -100px;width: 900px;">
+                                                                                                                    <div _ngcontent-mug-c12=""
+                                                                                                                        class="col-md-4 m-t-20 col-12">
+                                                                                                                        <!---->
+                                                                                                                        <div _ngcontent-mug-c12=""
+                                                                                                                            _nghost-mug-c19=""
+                                                                                                                            class="ng-star-inserted">
+                                                                                                                            <!---->
+                                                                                                                            <table
+                                                                                                                                _ngcontent-mug-c19=""
+                                                                                                                                class="table ng-star-inserted"
+                                                                                                                                id="document_total">
+                                                                                                                                <thead
+                                                                                                                                    _ngcontent-mug-c19=""
+                                                                                                                                    style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                                                                                </thead>
+                                                                                                                                <tbody
+                                                                                                                                    _ngcontent-mug-c19=""
+                                                                                                                                    style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                                                                                    <tr
+                                                                                                                                        _ngcontent-mug-c19="">
+                                                                                                                                        <td
+                                                                                                                                            _ngcontent-mug-c19="">
+                                                                                                                                            Total
+                                                                                                                                            HT
+                                                                                                                                        </td>
+                                                                                                                                        <td _ngcontent-mug-c19=""
+                                                                                                                                            id="lines_total">
+                                                                                                                                            1&nbsp;256,000&nbsp;TND
+                                                                                                                                        </td>
+                                                                                                                                    </tr>
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <tr _ngcontent-mug-c19=""
+                                                                                                                                        class="ng-star-inserted">
+                                                                                                                                        <td
+                                                                                                                                            _ngcontent-mug-c19="">
+                                                                                                                                            TOTAL
+                                                                                                                                            TVA
+                                                                                                                                        </td>
+                                                                                                                                        <td _ngcontent-mug-c19=""
+                                                                                                                                            class="value"
+                                                                                                                                            id="total_excltax">
+                                                                                                                                            0,000&nbsp;TND
+                                                                                                                                        </td>
+                                                                                                                                    </tr>
+                                                                                                                                    <tr
+                                                                                                                                        _ngcontent-mug-c19="">
+                                                                                                                                        <td
+                                                                                                                                            _ngcontent-mug-c19="">
+                                                                                                                                            TOTAL
+                                                                                                                                            TTC
+                                                                                                                                        </td>
+                                                                                                                                        <td _ngcontent-mug-c19=""
+                                                                                                                                            class="value"
+                                                                                                                                            id="total_excltax">
+                                                                                                                                            1&nbsp;256,000&nbsp;TND
+                                                                                                                                        </td>
+                                                                                                                                    </tr>
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                    <tr _ngcontent-mug-c19=""
+                                                                                                                                        class="ng-star-inserted">
+                                                                                                                                        <td
+                                                                                                                                            _ngcontent-mug-c19="">
+                                                                                                                                            Timbre
+                                                                                                                                            fiscal
+                                                                                                                                        </td>
+                                                                                                                                        <td _ngcontent-mug-c19=""
+                                                                                                                                            class="value">
+                                                                                                                                            0,600&nbsp;TND
+                                                                                                                                        </td>
+                                                                                                                                    </tr>
+                                                                                                                                    <tr _ngcontent-mug-c19=""
+                                                                                                                                        style="background-color: rgba(0, 0, 0, 0.03);">
+                                                                                                                                        <td _ngcontent-mug-c19=""
+                                                                                                                                            class="font-weight-bold">
+                                                                                                                                            NET
+                                                                                                                                            À
+                                                                                                                                            PAYER
+                                                                                                                                        </td>
+                                                                                                                                        <td _ngcontent-mug-c19=""
+                                                                                                                                            class="value font-weight-bold">
+                                                                                                                                            1&nbsp;256,600&nbsp;TND
+                                                                                                                                        </td>
+                                                                                                                                    </tr>
+                                                                                                                                    <!---->
+                                                                                                                                    <!---->
+                                                                                                                                </tbody>
+                                                                                                                            </table>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div _ngcontent-mug-c12=""
+                                                                                                                    class="row justify-content-center">
+                                                                                                                    <div _ngcontent-mug-c12=""
+                                                                                                                        class="col-md-6 ng-untouched ng-pristine ng-valid">
+                                                                                                                        <div _ngcontent-mug-c12=""
+                                                                                                                            class="panel-body m-t-20">
+                                                                                                                            <!---->
+                                                                                                                            <!----><span
+                                                                                                                                _ngcontent-mug-c12=""
+                                                                                                                                class="ng-star-inserted"></span>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                                <div _ngcontent-yfe-c25=""
+                                                                                                                    class="row p-3 justify-content-center">
+                                                                                                                    <div _ngcontent-yfe-c25=""
+                                                                                                                        class="col-12"
+                                                                                                                        _nghost-yfe-c34="">
+                                                                                                                        <!---->
+                                                                                                                        <div _ngcontent-yfe-c34=""
+                                                                                                                            class="row p-3 justify-content-between ng-star-inserted">
+                                                                                                                            <div _ngcontent-yfe-c34=""
+                                                                                                                                class="col-12 p-3"
+                                                                                                                                style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                                                                            </div>
+                                                                                                                            <div _ngcontent-yfe-c34=""
+                                                                                                                                class="col">
+                                                                                                                                <div _ngcontent-yfe-c34=""
+                                                                                                                                    class="browse-articles browse-bottom">
+                                                                                                                                    <h6
+                                                                                                                                        _ngcontent-yfe-c34="">
+                                                                                                                                        <b
+                                                                                                                                            _ngcontent-yfe-c34="">ENTREPRISE</b>
+                                                                                                                                    </h6>
+                                                                                                                                    <span
+                                                                                                                                        _ngcontent-yfe-c34="">--,
+                                                                                                                                        --</span><br
+                                                                                                                                        _ngcontent-yfe-c34=""><span
+                                                                                                                                        _ngcontent-yfe-c34="">
+                                                                                                                                    </span><br
+                                                                                                                                        _ngcontent-yfe-c34=""><span
+                                                                                                                                        _ngcontent-yfe-c34="">Code
+                                                                                                                                        TVA:
+                                                                                                                                        --</span>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <div _ngcontent-yfe-c34=""
+                                                                                                                                class="col">
+                                                                                                                                <div _ngcontent-yfe-c34=""
+                                                                                                                                    class="browse-articles browse-bottom">
+                                                                                                                                    <h6
+                                                                                                                                        _ngcontent-yfe-c34="">
+                                                                                                                                        <b
+                                                                                                                                            _ngcontent-yfe-c34="">INFORMATIONS
+                                                                                                                                            DE
+                                                                                                                                            CONTACT</b>
+                                                                                                                                    </h6>
+                                                                                                                                    <span
+                                                                                                                                        _ngcontent-yfe-c34="">--
+                                                                                                                                        Dridi</span><br
+                                                                                                                                        _ngcontent-yfe-c34=""><span
+                                                                                                                                        _ngcontent-yfe-c34="">--</span><br
+                                                                                                                                        _ngcontent-yfe-c34="">
+                                                                                                                                    <!---->
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <div _ngcontent-yfe-c34=""
+                                                                                                                                class="col">
+                                                                                                                                <!---->
+                                                                                                                                <div _ngcontent-yfe-c34=""
+                                                                                                                                    class="browse-articles browse-bottom ng-star-inserted">
+                                                                                                                                    <h6
+                                                                                                                                        _ngcontent-yfe-c34="">
+                                                                                                                                        <b
+                                                                                                                                            _ngcontent-yfe-c34=""></b>
+                                                                                                                                    </h6>
+                                                                                                                                    <!---->
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <!---->
+                                                                                                    
+                                                                                                    <!---->
+
+                                                                                                </div>
+                                                                                            </main>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+
+
+
+
+
+                                                                        </div>
+
+                                                                    </div>

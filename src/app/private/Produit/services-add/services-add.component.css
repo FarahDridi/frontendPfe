@@ -1,0 +1,62 @@
+h6{
+    margin-bottom: 40px;
+}
+
+input[type=radio]{
+    background-color:transparent;
+    border:none;
+    width:20px;
+    margin-left: 90px;
+}
+.arebb{
+    
+    margin-top:38px ;
+}
+.areb{
+    margin-left: 250px;
+    margin-top: -30px;
+}
+.pp{
+    display: inline-block;
+    margin-right: 12px;
+}
+.fai, .fais, .faiss, .faisss{
+    display: block;
+}
+.lou, .louu, .louuu{
+    display:block;
+}
+input{
+    border-color: silver;
+}
+textarea{
+    border-color: silver;
+    width: 635px;
+    height: 135px;
+}
+.aaje{
+    margin-left: 590px;
+    margin-top: -183px;
+}
+.spec{
+    border: 1px solid rgba(0, 128, 0, 0.486);
+    border-radius: 2px;
+    width: 220px;
+    background-color: rgba(192, 192, 192, 0.315);
+}
+.toop{
+    float: right;
+    margin-top: -160px;
+}
+
+
+.lou{
+    width: 580px;
+    
+}
+.zien{
+    margin-left: 508px;
+    margin-top: -70px;
+    width: 450px;
+}
+

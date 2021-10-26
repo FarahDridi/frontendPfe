@@ -1,0 +1,185 @@
+<!-- Page Wrapper -->
+<html>
+
+<head>
+    <title>Profile Card</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+
+
+        <!-- Topbar -->
+        <app-topbar></app-topbar>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+            </div>
+
+
+
+            <!-- Content Row -->
+
+
+            <div class="row">
+
+                <body style="width: 43rem;">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-10">
+                                <div class="row z-depth-3">
+                                    <div style="height:20rem;background-color: rgb(17, 192, 134);" class="col-sm-4 rounded-left">
+                                        <div class="card-block text-center text-white">
+                                            <i class="fas fa-user-tie fa-7x mt-5"></i>
+                                            <h2 class="font-weight-bold mt-4">{{profileForm.get('prenom').value}}</h2>
+                                            <p>{{profileForm.get('role').value}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8 bg-white rounded-right">
+                                        <h3 class="mt-3 text-center">Information</h3>
+                                        <hr class="bg-primary mt-0 w-25">
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="font-weight-bold">Email:</p>
+                                                <h6 class=" text-muted">{{profileForm.get('email').value}}</h6>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="font-weight-bold">Téléphone:</p>
+                                                <h6 class="text-muted">  </h6>
+                                            </div>
+                                        </div>
+                                        <hr class="bg-primary">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="font-weight-bold">Date de création</p>
+                                                <h6 class="text-muted"> </h6>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="font-weight-bold">Dernière connexion</p>
+                                                <h6 class="text-muted"> </h6>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+                </body>
+                
+               
+                <!-- Pie Chart -->
+                <div class="col">
+                    <div class="card h-77" style="width: 24rem;margin-top:-5px;border: 2px solid black;">
+
+                        <!-- Card Body -->
+
+                        <br>
+                        <h6 style="padding-left: 20px;" class="m-0 font-weight-bold text-dark"><i
+                                class="fas fa-user-lock fa-sm fa-fw mr-2 text-dark"></i> MOT DE PASSE</h6>
+                        <br>
+                        <div class="card-body">
+                            <form class="user" [formGroup]="profileForm" class="user" (ngSubmit)="profileUser()">
+                                <div class="form-group row">
+                                    <div class="col mb-3 mb-sm-0">
+                                        <label for="act">Mot de passe actuel</label><input type="text"
+                                            formControlName="act" class="form-control" id="exampleAct" size="25">
+                                        <div *ngIf="act.touched && act.invalid" class="text-danger">
+                                            <div *ngIf="act.errors.required">
+                                                <small> Mot de passe requis</small>
+                                            </div>
+                                            <div *ngIf="act.errors.minlength">
+                                                <small>Le mot de passe doit être au moins de 6 caractères</small>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-3 mb-sm-0">
+                                        <label for="nouveau">Nouveau mot de passe</label><input type="text"
+                                            formControlName="nouveau" class="form-control" id="exampleNouveau"
+                                            size="25">
+                                        <div *ngIf="nouveau.touched && nouveau.invalid" class="text-danger">
+                                            <div *ngIf="nouveau.errors.required">
+                                                <small>Mot de passe requis</small>
+                                            </div>
+                                            <div *ngIf="nouveau.errors.minlength">
+                                                <small>Le mot de passe doit être au moins de 6 caractères</small>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col mb-3 mb-sm-0">
+                                        <label for="conf">Confirmer mot de passe</label><input type="text"
+                                            formControlName="conf" class="form-control" id="exampleConf" size="25">
+                                        <div *ngIf="conf.touched && conf.invalid" class="text-danger">
+                                            <div *ngIf="conf.errors.required">
+                                                <small>La confirmation du mot de passe est requise</small>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-3 mb-sm-0">
+                                        <button [disabled]="profileForm.invalid" type="submit"
+                                            class="btn btn-success btn-block ">
+                                            Enregistrer
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- End of Footer -->
+    </div>
+</div>
+</body>

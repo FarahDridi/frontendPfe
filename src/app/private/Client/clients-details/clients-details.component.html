@@ -1,0 +1,188 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Informations client</h1>
+
+                </div>
+
+
+
+
+                <div class="card"
+                    style="padding-right:50px;width: 67rem;height:60px;padding-top:18px;padding-left:20px; border-color: white;">
+                    <div _ngcontent-sue-c30="" class="ng-star-inserted">
+                        <i  _ngcontent-sue-c30="" class="fa fa-user text-success"><span _ngcontent-sue-c30="" class="ng-star-inserted">
+                             
+                            <b class="text-dark" style="margin-left: 5px;margin-top: -60px;" _ngcontent-sue-c30=""> {{client.civilite}}<span style="margin-left: 10px;"></span> {{client.nom}}</b>
+                            <span style="margin-left: 15px;" _ngcontent-sue-c30="" class="text-dark"> {{client.reference}}</span>
+                        </span></i>
+                        
+
+                    </div>
+                    <div style="margin-top:-30px;" _ngcontent-sue-c30="" class="p-2 ml-auto">
+                        <span _ngcontent-sue-c30="" class="h6">Chiffre d'affaire : </span>
+                        <strong _ngcontent-sue-c30="" class="text-success">0000&nbsp;TND </strong>
+                        <i _ngcontent-sue-c30=""
+                            class="fa fa-pencil-square-o cursor-pointer text-success ng-star-inserted"></i>
+                    </div>
+                </div>
+                <br>
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+
+                            <!-- Card Body -->
+
+                            <div class="card-body" style="padding:40px;">
+
+                                <form >
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <div class="pp"><label for="raison">Raison social</label><p style="color: black;" class="fai"
+                                                    >{{client.raison}} <label *ngIf="client.raison === ''">--</label></p>
+                                            </div>
+
+                                           
+                                            
+
+
+                                            <div class="pp"><label for="email">Email</label><p style="color: black;" class="faisss">{{client.email}}</p></div>
+
+                                            <div class="pp"><label for="site">Site Web</label><p style="color: black;" class="fa">{{client.site}}<label *ngIf="client.site === ''">--</label></p></div>
+
+                                        </div>
+                                    </div>
+                                    <fieldset>
+                                        <legend></legend>
+
+                                        <label for="num">Numèro mobile</label><br>
+                                        <div style="color: black;" >{{client.num}}<label *ngIf="client.num === ''">--</label></div>
+
+                                    </fieldset>
+                                    <hr>
+
+                                    <fieldset>
+                                        <legend>Adresse</legend>
+                                        <div
+                                            style="padding-left:20px;padding-top:15px;border:1px solid green;border-radius: 10px; width: 350px;height: 150px;">
+                                            <div style="color: black;">{{client.pays}}<label *ngIf="client.pays === ''">--</label></div>
+
+                                            <div style="color: black;">{{client.region}}{{client.code}}</div>
+
+                                            <div>
+
+                                            </div>
+
+                                            <br>
+                                            Type
+                                            <br>
+                                            <div style="color: black;">{{client.type_facture}}<label *ngIf="client.type_facture === ''">--</label></div>
+
+                                        </div>
+
+
+
+
+
+                                    </fieldset>
+                                    <hr>
+                                    <fieldset>
+                                        <legend>Informations complémentaires</legend>
+
+                                        <div class="pp"><label for="del">Délai de paiement</label>
+
+                                            <div style="color: black;" class="faiss"
+                                                    >{{client.delai}} {{client.det}}<label *ngIf="(client.dalai && client.det) === ''">--</label></div>
+                                        </div>
+
+                                    </fieldset>
+
+
+
+
+                                </form>
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2021</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>

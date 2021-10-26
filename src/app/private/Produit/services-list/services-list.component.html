@@ -1,0 +1,224 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Produit et Service </h1>
+
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-dark">Liste des produits et services</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <form
+                                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" (input)="filter($event.target.value)" class="form-control bg-light border-0 small"
+                                            placeholder="Recherche par nom du produit" aria-label="Search"
+                                            aria-describedby="basic-addon2" size="98px">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-success" type="button">
+                                                <i class="fas fa-search fa-sm "></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p><button style="margin-top:10px;" class="btn btn-success" type="submit"
+                                    routerLink="/services/add"><i class="fa fa-plus"></i> Ajouter</button></p>
+                                <h2></h2>
+                                <ul style="margin-left:10px; margin-right:10px" _ngcontent-yjf-c31="" class="nav-tabs nav" ngbnav="" role="tablist">
+                                    <li _ngcontent-yjf-c31="" ngbnavitem="" class="nav-item"><a _ngcontent-yjf-c31=""
+                                        routerLink="/services/list" ngbnavlink="" id="ngb-nav-38" class="nav-link active" role="tab"
+                                            aria-controls="ngb-nav-38-panel" aria-selected="true"
+                                            aria-disabled="false"><i 
+                                                class="fab fa-product-hunt text-success" ></i> Produits ({{servicesList.length}})</a></li>
+                                    
+                                </ul>
+                                <div class="row" style="margin-left:5px; margin-right:5px">
+                                    <div class="col">
+                                        <div *ngIf="servicesList.length==0" class="alert alert-warning">aucun produit trouvé
+                                        </div>
+                                        <table *ngIf="servicesList.length>0" class="table table-sm">
+                                            <thead style="color: #0e5355bd;font-size: 15px;">
+                                                <tr>
+                                                    <th>Référence</th>
+                                                    <th>Type</th>
+                                                    <th>Image</th>
+                                                    <th>Produit</th>
+                                                    <th>Prix de vente</th>
+                                                    <th>Catégories</th>
+                                                    <th>Taxe</th>
+                                                    <th>TVA</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let service of servicesList; let i = index ;">
+                                                    
+                                                    <th>2110000{{i+1}}</th>
+                                                    <th>{{service.type}}</th>
+                                                    <th><img [src]="service.image" height="30" ></th>
+                                                    <th>{{service.lib}}</th>
+                                                    <th>{{service.resultat_ht|number}} TND</th>
+                                                    <th>{{service.categorie}}</th>
+                                                    <th>{{service.taxe}}</th>
+                                                    <th>{{service.tva}}</th>
+                                                    
+                                                    <th>
+                                                        <button [routerLink] ="['/services/details', service._id]" class="btn btn-sm btn-warning">
+                                                            <i class="fa fa-eye"></i>
+                                                        </button>
+
+                                                        <button [routerLink] ="['/services/update', service._id]"
+                                                            class="btn btn-sm btn-info mx-3">
+                                                            <i class="fa fa-pen"></i>
+                                                        </button>
+                                                        <a href="#" data-toggle="modal" data-target="#deleteModal">
+                                                            <button  (click)="deleteRow(service)"
+                                                                class="btn btn-sm btn-danger">
+                                                                <i class="fas fa-trash"></i>
+                                                            </button>
+                                                        </a>
+                                                    </th>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                                <div _ngcontent-ykg-c20="" class="text-center p-2 ng-star-inserted"><i
+                                        _ngcontent-ykg-c20="" class="fas fa-exclamation-circle"
+                                        style="font-size: 80px;margin-top: 19px; color: red !important"></i>
+                                    <h2 class="swal2-title" id="swal2-title"
+                                        style="display: flex; margin-top:-40px ; margin-left: 76px;color: black;">Êtes-vous sûr ?</h2>
+                                    <div id="swal2-content" style="display: block;color: black;">
+                                        Ce Produit sera supprimé.</div>
+                                    <br>
+
+                                    <button style="font-weight:bold;color: #fff;background-color:rgba(28, 192, 110, 0.808);margin-right: 10px; margin-bottom: 50px;"  id="closeModalButton" data-toggle="modal"data-target="#deleteModal" class="btn btn-default"                          
+                                        data-dismiss="modal">Annuler</button>
+                                <a style="border: 0;
+                                border-radius: .25em;
+                                margin-bottom: 50px;
+                                background: initial;
+                                background-color:rgba(28, 192, 110, 0.808);
+                                color: #fff;
+                                font-size: 1.0625em;" class="btn btn-success" (click)="delete()" >Approuver </a>
+
+                                    
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      

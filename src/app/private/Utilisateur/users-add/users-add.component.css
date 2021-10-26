@@ -1,0 +1,379 @@
+.cont{
+    margin-left: 40px;
+}
+.cont1{
+    margin-left: 100px;
+}
+.cont2{
+    margin-left: 70px;
+}
+.cont3{
+    margin-left: 180px;
+}
+.cont4{
+    margin-left: 160px;
+}
+.cont5{
+    margin-left: 80px;
+}
+.toggle-btn{
+    width: 60px;
+    height: 30px;
+    background: rgba(128, 128, 128, 0.534);
+    border-radius: 30px;
+    padding: 5px;
+    transition:all 300ms ease-in-out;
+}
+.toggle-btn > .inner-circle{
+    width: 25px;
+    height: 25px;
+    margin-top: -2px;
+    background: #fff;
+    border-radius: 50%;
+    transition:all 300ms ease-in-out;
+}
+.toggle-btn.active{
+    background: rgba(6, 206, 93, 0.712);
+}
+.toggle-btn.active > .inner-circle {
+    margin-left: 26px;
+}
+
+
+
+small{
+    text-decoration: rgba(192, 192, 192, 0.397);
+    font-weight: 200;
+}
+h6{
+    margin-bottom: 40px;
+}
+
+
+.icofont {
+    font-family: IcoFont!important;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+}
+.rectangle-company[_ngcontent-jqp-c23] {
+    box-sizing: border-box;
+    height: 116.46px;
+    width: 116.43px;
+    border-radius: 4px;
+    background-color: #f0faff;
+    border: 1px solid #e0e0e0;
+}
+.col-12{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.m-r-10 {
+    margin-left: 15px;
+}
+.col-8{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+form > .col-12{
+    border: 1px solid rgba(0, 128, 0, 0.192);
+    padding-bottom: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.pp{
+    display: inline-block;
+    margin-right: 12px;
+}
+.fai, .fais, .faiss, .faisss{
+    display: block;
+}
+form{
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+.modal-dialog {
+    max-width: 1000px;
+    margin: 1.75rem auto;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.titreModal[_ngcontent-bjt-c23] {
+    height: 58.87px;
+    color: #313131;
+    font-family: Arial;
+    font-size: 24px;
+    line-height: 33px;
+}
+.m-l-30 {
+    margin-left: 30px !important;
+}
+.m-t-30 {
+    margin-top: 30px !important;
+}
+.float-left {
+    float: left!important;
+}
+
+.m-r-30 {
+    margin-right: 30px;
+}
+.m-b-20 {
+    margin-bottom: 20px !important;
+}
+.m-t-30 {
+    margin-top: 30px !important;
+}
+.float-right {
+    float: right!important;
+}
+.btn-block {
+    display: block;
+}
+.btn-light {
+    background-color: #f6f7fb !important;
+    border-color: #f6f7fb !important;
+    color: #2a3142 !important;
+}
+.m-r-10 {
+    margin-right: 10px;
+}
+.m-b-20 {
+    margin-bottom: 20px !important;
+}
+.m-t-30 {
+    margin-top: 30px !important;
+}
+.div-permission[_ngcontent-bjt-c23] {
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #f5f5f6;
+    box-shadow: 1px 5px 24px 0 rgb(68 102 242 / 5%);
+}
+.m-r-30 {
+    margin-right: 30px;
+}
+.m-l-15 {
+    margin-left: 15px !important;
+}
+.m-b-15 {
+    margin-bottom: 15px !important;
+}
+.m-t-20 {
+    margin-top: 20px !important;
+}
+.ng-select {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+.p-r-0 {
+    padding-right: 0px;
+}
+.p-l-0 {
+    padding-left: 0px;
+}
+.ng-select.customng[_ngcontent-bjt-c23] .ng-select-container {
+    box-sizing: border-box;
+    height: 46px;
+    border-radius: 3px;
+    border: 1px solid #dee2e6;
+}
+.ng-select .ng-clear-wrapper {
+    cursor: pointer;
+    position: relative;
+    width: 17px;
+}
+.ng-select .ng-clear-wrapper {
+    color: #999;
+}
+.ng-select span {
+    box-sizing: border-box;
+}
+.ng-select .ng-arrow-wrapper {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    user-select: none;
+}
+.ng-select .ng-arrow-wrapper {
+    width: 25px;
+    padding-right: 5px;
+}
+.ng-select .ng-arrow-wrapper .ng-arrow {
+    pointer-events: none;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    position: relative;
+}
+.ng-select .ng-arrow-wrapper .ng-arrow {
+    border-color: #999 transparent transparent;
+    border-style: solid;
+    border-width: 5px 5px 2.5px;
+}
+@media only screen and (max-width: 1199px){
+.faq-accordion {
+    margin-bottom: 30px;
+}
+}
+.m-r-20 {
+    margin-right: 20px;
+}
+.m-l-20 {
+    margin-left: 20px !important;
+}
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.card {
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    box-shadow: 1px 5px 24px 0 rgb(2 136 209 / 5%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+}
+.m-t-10 {
+    margin-top: 10px !important;
+}
+.default-according .card .card-header h5 {
+    margin-top: 2px;
+}
+.card .card-header h5 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.faq-accordion .card .btn-link {
+    display: flex;
+}
+.default-according .card .btn-link {
+    font-weight: 600;
+    color: black;
+}
+.default-according.style-1 button {
+    width: 100%;
+    text-align: left;
+}
+button {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    align-items: flex-start;
+    font: 400 13.3333px Arial;
+}
+.default-according.style-1 button[aria-expanded="true"]:before {
+    content: "";
+    font-family: IcoFont;
+}
+.default-according.style-1 button:before {
+    right: 20px;
+    position: absolute;
+    transition: 0.4s;
+}
+.faq-accordion .card .btn-link svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+svg {
+    vertical-align: baseline;
+    overflow: hidden;
+}
+svg{
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+circle , path{
+    animation-timing-function: linear;
+    transform-origin: 50% 50%;
+    animation-direction: normal;
+}
+.toggle-data {
+    cursor: pointer;
+}
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+@media only screen and (max-width: 1199px){
+.faq-accordion {
+    margin-bottom: 30px;
+}
+}
+.toggleSwitch[_ngcontent-els-c23] input[_ngcontent-els-c23]:checked ~ span[_ngcontent-els-c23] span[_ngcontent-els-c23]:last-of-type {
+    opacity: 1;
+    color: #fff;
+}
+
+.toggleSwitch[_ngcontent-els-c23] > span[_ngcontent-els-c23] span[_ngcontent-els-c23] {
+    position: absolute;
+    z-index: 5;
+    display: block;
+    margin-left: 50px;
+    text-align: left;
+    font-size: .9em;
+    width: 100%;
+    left: 15%;
+    top: -1px;
+    opacity: 0;
+}
+
+.toggleSwitch[_ngcontent-els-c23] span[_ngcontent-els-c23] span[_ngcontent-els-c23] {
+    display: none;
+}
+
+.toggleSwitch[_ngcontent-els-c23] *[_ngcontent-els-c23] {
+    box-sizing: border-box;
+}
+

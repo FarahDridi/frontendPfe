@@ -1,0 +1,53 @@
+img{
+    height: 150px;
+    width: 180px;
+    margin-left: 50px;
+    margin-top: -190px;
+    
+}
+.fifi:hover{
+    border:1.5px solid rgba(4, 61, 44, 0.342);
+}
+.fifi{
+    border: 1px solid rgb(241, 220, 220);
+}
+.hoho{
+    margin-top: 165px;
+}
+.hel{
+    display: block;
+}
+.hell{
+    display: block;
+}
+p{
+    display: inline-block;
+    margin-right: 12px;
+}
+label{
+    color: black;
+}
+input{
+    border:1px solid silver;
+    border-radius: 2px;
+}
+.nous, .nouss, .nousss{
+    display: block;
+}
+.bac{
+    width: 10px;
+    height: 5px;
+}
+.hos, .hoss{
+    display: block;
+}
+.mougou{
+    display: block;
+}
+.fai, .fais, .faiss{
+    display: block;
+}
+small{
+    text-decoration: rgba(192, 192, 192, 0.397);
+    font-weight: 200;
+}

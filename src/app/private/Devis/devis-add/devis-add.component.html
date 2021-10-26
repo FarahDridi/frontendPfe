@@ -1,0 +1,1293 @@
+<div id="wrapper">
+    <app-sidebar></app-sidebar>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Vente <small>/ Devis<small> / Ajouter devis</small></small></h1>
+                </div>
+                <!-- Card Body -->
+                <body class="light" main-theme-layout="ltr" style="padding-right: 0px;">
+                    <div></div>
+                    <router-outlet></router-outlet>
+                    <div>
+                        <div class="dark-body-only" id="outer-container">
+                            <div class="page-wrapper default" id="canvas-bookmark">
+                                <div class="page-body-wrapper default">
+                                    <div class="page-body">
+                                        <main>
+                                            <form [formGroup]="devisAddForm" class="user" (ngSubmit)="devisUser()">
+                                                <router-outlet></router-outlet>
+                                                <div class="ng-star-inserted">
+                                                    <div class="container-fluid ng-star-inserted">
+                                                        <div class="row justify-content-center ng-star-inserted">
+                                                            <div
+                                                            class="card col-md-10 col-11 shadow-lg shadow-showcase water-marka">
+                                                            <div class="row p-3 d-md-none d-block">
+                                                                <div class="col-md-5 m-t-20 col-12">
+                                                                    <h3 class="text-muted mt-4 ng-star-inserted"
+                                                                        style="text-align: center; font-size: 34px">
+                                                                    </h3>
+                                                                </div>
+                                                                <div class="col-md-5 m-t-20 col-12">
+                                                                    <div>
+                                                                        <div
+                                                                        class="d-flex justify-content-center ng-star-inserted">
+                                                                        <img style="border:1px solid rgb(230, 222, 222);"
+                                                                            class="invoiceLogo ng-star-inserted"
+                                                                            height="150px"
+                                                                            src="/assets/img/logo.jpg">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="row p-3 justify-content-between d-md-block d-none">
+                                                                <div class="col-md-12 m-t-50 col-12">
+                                                                    <h3 class="text-muted mt-4 ng-star-inserted"
+                                                                        style="text-align: right; font-size: 34px">
+                                                                        DEVIS
+                                                                    </h3>
+                                                                </div>
+                                                                <div class="col-md-5 m-t-20 col-12">
+                                                                    <div>
+                                                                        <div
+                                                                        class="d-flex justify-content-center ng-star-inserted">
+                                                                        <img style="border:1px solid rgb(230, 222, 222);"
+                                                                            class="invoiceLogo ng-star-inserted"
+                                                                            height="150px"
+                                                                            src="/assets/img/logo.jpg">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row p-3 justify-content-between">
+                                                                <div class="col-md-5 m-t-20 col-12">
+                                                                    <div>
+                                                                        <div class="panel panel-alt ng-star-inserted"
+                                                                        id="clientDiv">
+                                                                        <div class="panel-heading d-flex">
+                                                                            <span
+                                                                                class="invoice-logo-text lh10 p-2 p-l-0 text-muted ng-binding ng-star-inserted">Client:</span>
+                                                                            <div
+                                                                                class="ng-autocomplete ng-star-inserted">
+                                                                                <div
+                                                                                    class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                    <div
+                                                                                    class="autocomplete-container">
+                                                                                    <div
+                                                                                        class="input-container">
+                                                                                        <div>
+                                                                                            <select style="width: 265px;" class="form-control" (ngModelChange)="clientChange($event)" formControlName="client">
+                                                                                                <option  value="" selected disabled>Choisir un client</option>
+                                                                                                <option style="color: rgb(84, 156, 12);" [ngValue] ="c" *ngFor="let c of clients">
+                                                                                                {{c.nom}}
+                                                                                                </option>
+                                                                                            </select>
+                                                                                            <div *ngIf="client.touched && client.invalid"
+                                                                                                class="text-danger">
+                                                                                                <div
+                                                                                                *ngIf="client.errors.required">
+                                                                                                <small>*
+                                                                                                Champ
+                                                                                                obligatoire</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="suggestions-container is-hidden">
+                                                                                        <ul></ul>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="suggestions-container is-visible">
+                                                                                        <ul></ul>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <span
+                                                                                class="p-2 d-md-none d-flex"><i
+                                                                                class="icon-angle-down"></i></span>
+                                                                        </div>
+                                                                        </div>
+                                                                        <div
+                                                                        class="panel-body div-customer ng-star-inserted">
+                                                                        <hr
+                                                                            style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                        </div>
+                                                                        <!-- Sélection d'un client déja exsistant dans la BD -->
+                                                                        <div
+                                                                        class="row m-b-5 form-group ng-star-inserted">
+                                                                        <label class="col">Nom
+                                                                        du client :</label><label
+                                                                            class="col ng-star-inserted">
+                                                                        {{selectedClient.nom}}
+                                                                        <label *ngIf="selectedClient.nom === '' ">--</label>
+                                                                        </label>
+                                                                        </div>
+                                                                        <div class="row m-b-5 form-group"><label
+                                                                        class="col">Numéro
+                                                                        mobile :</label><label
+                                                                            class="col ng-star-inserted">
+                                                                        {{selectedClient.num}}
+                                                                        <label *ngIf="selectedClient.num === '' ">--</label>
+                                                                        </label>
+                                                                        </div>
+                                                                        <div class="row m-b-5 form-group"><label
+                                                                        class="col">Adresse
+                                                                        : </label><label
+                                                                            class="col ng-star-inserted">
+                                                                        {{selectedClient.adresse}}
+                                                                        <label *ngIf="selectedClient.adresse === '' ">--</label>
+                                                                        </label>
+                                                                        </div>
+                                                                        <div class="row m-b-5 form-group"><label
+                                                                        class="col">Email
+                                                                        :</label><label
+                                                                            class="col ng-star-inserted">
+                                                                        {{selectedClient.email}}
+                                                                        <label *ngIf="selectedClient.email === '' ">--</label>
+                                                                        </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5 m-t-20 col-12">
+                                                                    <div>
+                                                                        <div
+                                                                        class="panel panel-alt ng-untouched ng-pristine ng-valid">
+                                                                        <div class="panel-heading p-2">
+                                                                            <span
+                                                                                class="invoice-logo-text lh10 text-muted ng-binding p-2 p-l-0">Détails
+                                                                            du document</span>
+                                                                            <div
+                                                                                class="panel-btns pull-right ml10">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="panel-body">
+                                                                            <hr class="mt-4 mb-4"
+                                                                                style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                            <div
+                                                                                class="row m-b-5 form-group">
+                                                                                <label
+                                                                                    class="col-4 col-form-label">Date
+                                                                                du document</label>
+                                                                                <div class="col-8">
+                                                                                    <input
+                                                                                    class="form-control bg-white ng-untouched ng-pristine ng-valid flatpickr-input ng-star-inserted"
+                                                                                    type="text"
+                                                                                    [(ngModel)]="currentDate"
+                                                                                    size="17"
+                                                                                    formControlName="date_document"
+                                                                                    class="form-control"
+                                                                                    id="exampleDate_document">
+                                                                                    <div *ngIf="date_document.touched && date_document.invalid"
+                                                                                    class="text-danger">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="row m-b-5 form-group">
+                                                                                <label
+                                                                                    class="col-4 col-form-label">Projet
+                                                                                :</label>
+                                                                                <div
+                                                                                    class="ng-autocomplete ng-star-inserted">
+                                                                                    <div
+                                                                                    class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                    <div
+                                                                                        class="autocomplete-container">
+                                                                                        <div style="margin-top: -41px;margin-left: 128px;"
+                                                                                            class="input-container">
+                                                                                            <input
+                                                                                                size="19"
+                                                                                                type="text"
+                                                                                                formControlName="projet"
+                                                                                                class="form-control"
+                                                                                                id="exampleProjet">
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="suggestions-container is-hidden">
+                                                                                            <ul></ul>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="suggestions-container is-visible">
+                                                                                            <ul></ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="row m-b-5 form-group">
+                                                                                <label
+                                                                                    class="col-4 col-form-label"
+                                                                                    for="inputDate">Note
+                                                                                :</label>
+                                                                                <div
+                                                                                    class="ng-autocomplete ng-star-inserted">
+                                                                                    <div
+                                                                                    class="ng-autocomplete ng-untouched ng-pristine ng-valid">
+                                                                                    <div
+                                                                                        class="autocomplete-container">
+                                                                                        <div style="margin-top: -41px;margin-left: 128px;"
+                                                                                            class="input-container">
+                                                                                            <input
+                                                                                                size="19"
+                                                                                                type="text"
+                                                                                                class="ng-untouched ng-pristine ng-valid"
+                                                                                                formControlName="note"
+                                                                                                class="form-control"
+                                                                                                id="exampleNote">
+                                                                                            <div *ngIf="note.touched && note.invalid"
+                                                                                                class="text-danger">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="suggestions-container is-hidden">
+                                                                                            <ul></ul>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="suggestions-container is-visible">
+                                                                                            <ul></ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row p-3 justify-content-center">
+                                                                <div class="col-12 m-t-20">
+                                                                    <div>
+                                                                        <div
+                                                                        class="ng-untouched ng-pristine ng-valid">
+                                                                        <table
+                                                                            class="table table-bordered table-document">
+                                                                            <thead class="cf"
+                                                                                style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                                <tr>
+                                                                                    <th
+                                                                                    class="th-designation">
+                                                                                    Désignation
+                                                                                    </th>
+                                                                                    <th
+                                                                                    class="th-150 ng-star-inserted">
+                                                                                    Quantité
+                                                                                    </th>
+                                                                                    <th
+                                                                                    class="th-200 ng-star-inserted">
+                                                                                    Prix HT
+                                                                                    </th>
+                                                                                    <th
+                                                                                    class="th-150 ng-star-inserted">
+                                                                                    Taxe
+                                                                                    </th>
+                                                                                    <th
+                                                                                    class="th-150 ng-star-inserted">
+                                                                                    TVA
+                                                                                    </th>
+                                                                                    <th
+                                                                                    class="th-200 ng-star-inserted">
+                                                                                    Total HT
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody dragula="HANDLES">
+                                                                            </tbody>
+                                                                        </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- <select style="width:190px;" class="form-control" (ngModelChange)="serviceChange($event)" formControlName="service">
+                                                                        <option value="" selected disabled>Choisir un produit</option>
+                                                                        <option style="color: rgb(84, 156, 12);" [ngValue] ="s" *ngFor="let s of services">
+                                                                        {{s.lib}}
+                                                                        </option>
+                                                                    </select> -->
+                                                                    <!-- dynamic add input  -->
+                                                                    <div class="hb"
+                                                                        *ngFor="let obj of productsList ; let i=index">
+                                                                        <td>
+                                                                        <div>
+                                                                            <div>
+                                                                                <div
+                                                                                    class="autocomplete-container">
+                                                                                    <div
+                                                                                        class="input-container">
+                                                                                        <select style="width:190px;" id="{{i}}"class="form-control" (ngModelChange)="serviceChange($event, i)" formControlName="serviceList" >
+                                                                                            <option value="" selected disabled>Choisir un produit</option>
+                                                                                            <option style="color: rgb(84, 156, 12);" [ngValue] ="s" *ngFor="let s of services">
+                                                                                            {{s.lib}}
+                                                                                            </option>
+                                                                                        </select>
+                                                                                        
+                                                                                        <!-- <div *ngIf="serviceList.touched && serviceList.invalid"
+                                                                                            class="text-danger">
+                                                                                            <div
+                                                                                                *ngIf="serviceList.errors.required">
+                                                                                                <small>*
+                                                                                                Champ
+                                                                                                obligatoire</small>
+                                                                                            </div>
+                                                                                        </div> -->
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        </td>
+                                                                        <td class="ng-star-inserted">
+                                                                        <div class="input-group">
+                                                                            <input 
+                                                                            formControlName="quantite"
+                                                                            class="form-control uPrice ng-untouched ng-pristine ng-valid ng-star-inserted"
+                                                                            type="number"
+                                                                            style="width: 148px;"
+                                                                            name="service{{i}}"
+                                                                            id="quantite"
+                                                                            [ngValue] ="obj.quantite"
+                                                                            (ngModelChange)="changeQuantite($event, i)">
+                                                                        </div>
+                                                                        </td>
+                                                                        <td class="ng-star-inserted">
+                                                                        <div class="input-group">
+                                                                            <input
+                                                                            class="form-control uPrice ng-untouched ng-pristine ng-valid ng-star-inserted"
+                                                                            [value] ="obj.prix"
+                                                                            type="number" 
+                                                                            style="width: 140px;"
+                                                                            name="service{{i}}"
+                                                                            id="service"
+                                                                            [(ngModel)]="obj.prix"
+                                                                            (change)="changeFn($event)">
+                                                                            <!-- <div *ngIf="servicePrice.touched && servicePrice.invalid"
+                                                                                class="text-danger">
+                                                                                <div
+                                                                                    *ngIf="servicePrice.errors.required">
+                                                                                    <small>* Champ
+                                                                                    obligatoire</small>
+                                                                                </div>
+                                                                            </div> -->
+                                                                            <!---->
+                                                                        </div>
+                                                                        <!---->
+                                                                        </td>
+                                                                        <!---->
+                                                                        <td>
+                                                                        <select style="width: 100px;"
+                                                                        class="form-control ng-untouched ng-pristine ng-valid ng-star-inserted"
+                                                                        name="service{{i}}" id="service"
+                                                                        [(ngModel)]="obj.service"
+                                                                        [value]="obj.taxe"
+                                                                        (change)="changeAt($event)">
+                                                                        <option value="0"
+                                                                            class="ng-star-inserted">
+                                                                        </option>
+                                                                        <option value="FODEC"
+                                                                            class="ng-star-inserted">
+                                                                            FODEC
+                                                                        </option>
+                                                                        </select>
+                                                                        </td>
+                                                                        <td>
+                                                                        <select style="width: 90px;"
+                                                                        class="form-control ng-untouched ng-pristine ng-valid ng-star-inserted"
+                                                                        name="service{{i}}" id="service"
+                                                                        [(ngModel)]="obj.service"
+                                                                        [value]="obj.tva"
+                                                                        (ngModelChange)="changeAl($event)">
+                                                                        <option value="0" 
+                                                                            class="ng-star-inserted">0%
+                                                                        </option>
+                                                                        <option value="7"
+                                                                            class="ng-star-inserted">7%
+                                                                        </option>
+                                                                        <option value="13"
+                                                                            class="ng-star-inserted">13%
+                                                                        </option>
+                                                                        <option value="19"
+                                                                            class="ng-star-inserted">19%
+                                                                        </option>
+                                                                        </select>
+                                                                        </td>
+                                                                        <!---->
+                                                                        <td style="padding-left: 20px;"
+                                                                        data-title="Total HT"
+                                                                        class="ng-star-inserted">
+                                                                        <p name="service{{i}}"
+                                                                        id="serviceHt"
+                                                                        >
+                                                                        {{obj.resultat_ht|number}}</p>
+                                                                        </td>
+                                                                        <!---->
+                                                                        <td data-title="Action"
+                                                                        class="ng-star-inserted"><i
+                                                                        (click)="removeForm($event,i)"
+                                                                        style="font-size: 25px; margin-left: 20px;"
+                                                                        class="fas fa-trash-alt text-danger"></i>
+                                                                        </td>
+                                                                    </div>
+                                                                    <br>
+                                                                    <!-- dynamic add separateur  -->
+                                                                    <!--  <div
+                                                                        *ngFor="let obj of dataarr ; let i=index">
+                                                                        <div name="separateur" id="separateur"
+                                                                            [(ngModel)]="obj.separateur"
+                                                                            _ngcontent-tsg-c58=""
+                                                                            _ngcontent-yfe-c30="" class="cf"
+                                                                            style="width: 730px; border-top: 5px solid rgb(0, 0, 0); ">
+                                                                            <i (click)="removeSForm(i)"
+                                                                                style="font-size: 25px; margin-left: 747px; margin-top: -50px;"
+                                                                                class="fas fa-trash-alt text-danger"></i>
+                                                                        </div>
+                                                                        <br>
+                                                                        </div> -->
+                                                                    <!-- dynamic add sous total  -->
+                                                                    <!--  <div
+                                                                        *ngFor="let obj of dataar ; let i=index">
+                                                                        <td name="sous_total" id="sous_total"
+                                                                            [(ngModel)]="obj.sous_total"
+                                                                            style="padding-left: 553px;"
+                                                                            _ngcontent-xoq-c32=""
+                                                                            class="text-right td-mobile td-soustotal"
+                                                                            colspan="5"> Sous total :
+                                                                            --
+                                                                            <i (click)="removeTForm(i)"
+                                                                                style="font-size: 25px; margin-left: 25px;"
+                                                                                class="fas fa-trash-alt text-danger"></i>
+                                                                        </td>
+                                                                        <br>
+                                                                        </div> -->
+                                                                    <div>
+                                                                        <div
+                                                                        class="row justify-content-center m-t-20 d-md-flex d-none ng-star-inserted">
+                                                                        <div class="btn-group" role="group">
+                                                                            <div>
+                                                                                <button
+                                                                                    class="btn btn-border ng-star-inserted"
+                                                                                    type="button"
+                                                                                    style="background-color: rgb(0, 0, 0); color: white;"><i
+                                                                                    class="fa fa-barcode"></i></button>
+                                                                            </div>
+                                                                            <button class="oppp"
+                                                                                (click)="addForm()"
+                                                                                class="btn btn-border text-nowrap"
+                                                                                type="button"
+                                                                                style="background-color: rgb(0, 0, 0); color: white;">
+                                                                            Ajouter Produit
+                                                                            </button>
+                                                                            <!----><button
+                                                                                class="btn btn-border text-nowrap ng-star-inserted"
+                                                                                type="button"
+                                                                                style="background-color: rgb(0, 0, 0); color: white;">
+                                                                            Ajouter Texte
+                                                                            </button>
+                                                                            <!----><button
+                                                                                class="btn btn-border text-nowrap ng-star-inserted"
+                                                                                type="button"
+                                                                                style="background-color: rgb(0, 0, 0); color: white;">
+                                                                            Ajouter Section
+                                                                            </button><button
+                                                                                (click)="addSForm()"
+                                                                                _ngcontent-yfe-c31=""
+                                                                                class="btn btn-border text-nowrap"
+                                                                                type="button"
+                                                                                style="background-color: rgb(0, 0, 0); color: white;">
+                                                                            Ajouter
+                                                                            Séparateur
+                                                                            </button>
+                                                                            <!----><button
+                                                                                (click)="addTForm()"
+                                                                                _ngcontent-yfe-c31=""
+                                                                                class="btn btn-border text-nowrap ng-star-inserted"
+                                                                                type="button"
+                                                                                style="background-color: rgb(0, 0, 0); color: white;">
+                                                                            Ajouter
+                                                                            Sous-total
+                                                                            </button>
+                                                                        </div>
+                                                                        </div>
+                                                                        <!---->
+                                                                        <div
+                                                                        class="d-flex justify-content-center d-md-none ng-star-inserted">
+                                                                        <div class="d-inline-block p-2 dropdown"
+                                                                            ngbdropdown="" role="group">
+                                                                            <button aria-haspopup="true"
+                                                                                class="btn btn-outline-primary dropdown-toggle"
+                                                                                id="dropdownBasic1"
+                                                                                ngbdropdowntoggle=""
+                                                                                aria-expanded="false">
+                                                                            Ajouter
+                                                                            </button>
+                                                                            <div aria-labelledby="dropdownBasic1"
+                                                                                ngbdropdownmenu=""
+                                                                                class="dropdown-menu"
+                                                                                x-placement="bottom-left">
+                                                                                <button
+                                                                                    class="dropdown-item">
+                                                                                Ajouter
+                                                                                Produit</button><button
+                                                                                    class="dropdown-item">
+                                                                                Ajouter
+                                                                                Texte
+                                                                                </button><button
+                                                                                    class="dropdown-item">
+                                                                                Ajouter
+                                                                                Section
+                                                                                </button><button
+                                                                                    class="dropdown-item">
+                                                                                Ajouter
+                                                                                Séparateur
+                                                                                </button><button
+                                                                                    class="dropdown-item">
+                                                                                Ajouter
+                                                                                Sous-total
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="margin-left:-120px ;"
+                                                                class="row p-3 justify-content-between">
+                                                                <div class="col-md-4 m-t-20 col-12"></div>
+                                                                <div class="col-md-4 m-t-20 col-12">
+                                                                    <div class="ng-star-inserted">
+                                                                        <table
+                                                                        class="table table-bordered ng-star-inserted">
+                                                                        <thead
+                                                                            style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                            <tr>
+                                                                                <th>TVA</th>
+                                                                                <th>Base</th>
+                                                                                <th>Montant</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="ng-star-inserted" *ngFor="let p of productsListSummary ">
+                                                                                <td scope="row">
+                                                                                    {{p.tva}}%
+                                                                                </td>
+                                                                                <td>
+                                                                                    {{p.base | number}}
+                                                                                </td>
+                                                                                <td>
+                                                                                    {{p.montant | number}}
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 m-t-20 col-12">
+                                                                    <div class="ng-star-inserted">
+                                                                        <table class="table ng-star-inserted"
+                                                                        id="document_total">
+                                                                        <thead
+                                                                            style="border-top: 5px solid rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.03);">
+                                                                        </thead>
+                                                                        <tbody
+                                                                            style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    Total HT
+                                                                                </td>
+                                                                                <td >
+                                                                                    {{totalHt|number}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!---->
+                                                                            <tr>
+                                                                                <td>
+                                                                                    FODEC
+                                                                                </td>
+                                                                                <td id="lines_total">
+                                                                                    {{totalFODEC | number}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!---->
+                                                                            <tr class="ng-star-inserted">
+                                                                                <td>
+                                                                                    TOTAL TVA
+                                                                                </td>
+                                                                                <td class="value"
+                                                                                    id="total_excltax">
+                                                                                    {{totalTVA | number}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    TOTAL TTC
+                                                                                </td>
+                                                                                <td class="value"
+                                                                                    id="total_excltax">
+                                                                                    {{totalTTC | number}}
+
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="ng-star-inserted">
+                                                                                <td>
+                                                                                    Timbre
+                                                                                    fiscal
+                                                                                </td>
+                                                                                <td class="value">
+                                                                                    {{timbreFiscale | number}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr
+                                                                                style="background-color: rgba(0, 0, 0, 0.03);">
+                                                                                <td
+                                                                                    class="font-weight-bold">
+                                                                                    NET À PAYER
+                                                                                </td>
+                                                                                <td
+                                                                                    class="value font-weight-bold">
+                                                                                    {{totalPayer | number}}
+
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row p-3 justify-content-center">
+                                                                <div class="col-12">
+                                                                    <div
+                                                                        class="row p-3 justify-content-between ng-star-inserted">
+                                                                        <div class="col-12 p-3"
+                                                                        style="border-top: 5px solid rgb(0, 0, 0);">
+                                                                        </div>
+                                                                        <div class="col">
+                                                                        <div
+                                                                            class="browse-articles browse-bottom">
+                                                                            <h6><b>ENTREPRISE</b></h6>
+                                                                            <span>Adresse</span><br>
+                                                                            <span>Numéro</span><br>
+                                                                        </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                        <div
+                                                                            class="browse-articles browse-bottom">
+                                                                            <h6>
+                                                                                <b>INFORMATIONS
+                                                                                DE
+                                                                                CONTACT</b>
+                                                                            </h6>
+                                                                            <span><strong>Admin</strong></span><br>
+                                                                            <span>Numéro contact</span><br>
+                                                                            <span>Site web</span><br>
+                                                                        </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                        <div
+                                                                            class="browse-articles browse-bottom ng-star-inserted">
+                                                                            <h6><b></b></h6>
+                                                                        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+                                                    <div class="ng-star-inserted">
+                                                        <div class="shadow shadow-showcase d-md-block d-none ng-star-inserted"
+                                                            style="position: fixed; bottom: 0; left: 0; width: 100vw; z-index: 99">
+                                                            <div class="row" style="
+                                                            border-top: solid;
+                                                            border-top-color:#0bb33dbb ;
+                                                            border-width: thick;
+                                                            background-color: white;
+                                                            ">
+                                                            <div class="col-md-6 col-12">
+                                                                <label class="float-left docType"><span
+                                                                    style="color: #0288d1; font-size: 50px"><i
+                                                                    class="fa fa-file-text-o"
+                                                                    style="color: #0288d1"></i></span>
+                                                                &nbsp; <span style="
+                                                                    color:#10742ea9;
+                                                                    font-weight: 800;
+                                                                    font-size: x-large;
+                                                                    margin-top: -38px;
+                                                                    "> DEVIS
+                                                                </span></label>
+                                                            </div>
+                                                            <div class="col-md-6 d-none d-md-block">
+                                                                <div
+                                                                    class="d-flex justify-content-end p-2 m-t-15 m-r-20">
+                                                                    <button routerLink="/devis/list"
+                                                                        class="btn btn-info float-right shadow shadow-showcase ng-star-inserted"
+                                                                        style="margin-left: 13px; height: 40px; width: 117px"
+                                                                        type="button"> Retour
+                                                                    </button>
+                                                                    <button routerLink="/devis/list"
+                                                                        class="btn btn-danger float-right shadow shadow-showcase ng-star-inserted"
+                                                                        style="margin-left: 13px; height: 40px; width: 117px"
+                                                                        type="button"> Annuler
+                                                                    </button>
+                                                                    <button (click)="devisUser()"
+                                                                    [disabled]="devisAddForm.invalid"
+                                                                    _ngcontent-yfe-c17=""
+                                                                    class="btn btn-success float-right shadow shadow-showcase save-document ng-star-inserted"
+                                                                    style="margin-left: 13px; height: 40px"
+                                                                    type="button">
+                                                                    Approuver &amp; Aperçu
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-block d-md-none ng-star-inserted">
+                                                            <div aria-label="FAB Menu" class="btn-group-fab"
+                                                            role="group">
+                                                            <div><button class="btn-test btn-main btn-primary"
+                                                                data-placement="left"
+                                                                style="outline: none !important"
+                                                                title="Menu" type="button"><i
+                                                                _ngcontent-yfe-c17=""
+                                                                class="fa fa-bars"></i></button><button
+                                                                _ngcontent-yfe-c17=""
+                                                                class="btn-test btn-sub btn-info"
+                                                                data-placement="left" title="Fullscreen"
+                                                                type="button"><i _ngcontent-yfe-c17=""
+                                                                class="fa fa-gears"></i></button><button
+                                                                class="btn-test btn-sub btn-warning"
+                                                                data-placement="left" title="Save"
+                                                                type="button"><i _ngcontent-yfe-c17=""
+                                                                class="fa fa-share-alt"></i></button><button
+                                                                _ngcontent-yfe-c17=""
+                                                                class="btn-test btn-sub btn-danger"
+                                                                data-placement="left" title="Download"
+                                                                type="button"><i _ngcontent-yfe-c17=""
+                                                                class="fa fa-file-pdf-o"></i></button><button
+                                                                _ngcontent-yfe-c17=""
+                                                                class="btn-test btn-sub btn-black"
+                                                                data-placement="left" title="Retour"
+                                                                type="button"><i _ngcontent-yfe-c17=""
+                                                                class="fa fa-arrow-left"></i>
+                                                                </button><button
+                                                                    class="btn-test btn-sub btn-success ng-star-inserted"
+                                                                    data-placement="left" type="button"
+                                                                    title="Approuver"><i
+                                                                    class="fa fa-check"></i>
+                                                                </button><button
+                                                                    class="btn-test btn-sub btn-danger ng-star-inserted"
+                                                                    data-placement="left" triggers="manual"
+                                                                    type="button" title="Annuler"><i
+                                                                    _ngcontent-yfe-c17=""
+                                                                    class="fa fa-undo"></i>
+                                                                </button>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Begin Inspectlet Asynchronous Code -->
+                                                <a href="#" data-toggle="modal" data-target="#wizardModal">
+                                                    <div class="card text-white bg-info mb-3 mm"
+                                                        style="max-width: 4rem;">
+                                                        <div class="card-body">
+                                                            <i class="fas fa-cogs "></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#pdfModal">
+                                                    <div class="card text-white mb-3 mmm"
+                                                        style="max-width: 4rem;height: 4rem;">
+                                                        <div class="card-body">
+                                                            <span><i class="far fa-file-pdf text-danger"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#logoutModal">
+                                                    <div class="card text-white mb-3 mmmm"
+                                                        style="max-width: 4rem; height: 4rem;">
+                                                        <div class="card-body">
+                                                            <span><i
+                                                            class="fas fa-envelope-square text-info"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                Partager par e-mail
+                                                            </h5>
+                                                            <button class="close" type="button"
+                                                                data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <input size="50"
+                                                                    class="form-control ng-untouched ng-pristine ng-valid"
+                                                                    placeholder="email@exemple.com" type="text">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div theme="bootstrap"
+                                                                    class="ng-tns-c26-11 ng-untouched ng-pristine ng-valid"
+                                                                    tabindex="">
+                                                                    <div class="ng2-tag-input bootstrap"
+                                                                        tabindex="-1">
+                                                                        <div class="ng2-tags-container">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="">Message:</label><br> Cher(e), <br>
+                                                                Merci pour votre confiance. Votre document
+                                                                peut
+                                                                être
+                                                                consulté, imprimé et téléchargé au format
+                                                                PDF à
+                                                                partir de la pièce jointe. 
+                                                                <br> Référence : 
+                                                                <br> Date :
+                                                                <br> Total : 
+                                                                <br><textarea
+                                                                    style="width:450px;"
+                                                                    class="form-control ng-untouched ng-pristine ng-valid"
+                                                                    id="my-textarea" name="messageToSend"
+                                                                    rows="3"></textarea>
+                                                            </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-success">Partager </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fa" id="pdfModal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dial" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                            </h5>
+                                                            <button class="close" type="button"
+                                                                data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            </div>
+                                                            <!--  <pdf-viewer  [src]="pdfSrc" [render-text]="true"
+                                                            style="display: block;width:100%;height:100%"></pdf-viewer>  -->
+                                                            <div class="modal-body">
+                                                            <ngx-extended-pdf-viewer [src]="pdfSrc"
+                                                            [height]="'90vh'" [useBrowserLocale]="true"
+                                                            [textLayer]="true" [showHandToolButton]="true">
+                                                            </ngx-extended-pdf-viewer>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fad" id="wizardModal" tabindex="-1" role="dialog"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialo" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <ul class="nav nav-tabs custon-set-tab">
+                                                                    <li
+                                                                        style="color: #41ad46c7;
+                                                                        font-weight: 900;
+                                                                        border: 2px solid #41ad46c7;border-radius: 8px;padding:7px;">
+                                                                        <a data-toggle="tab"
+                                                                        href="#Taxe">Taxe</a>
+                                                                    </li>
+                                                                    <li
+                                                                        style="color: #41ad46c7;
+                                                                        font-weight: 900;
+                                                                        border: 2px solid #41ad46c7;border-radius: 8px;padding:7px;margin-left: 10px;">
+                                                                        <a data-toggle="tab"
+                                                                        href="#Devise">Devise</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </h5>
+                                                            <button class="close" type="button"
+                                                                data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="tab-content custom-bdr-nt">
+                                                                    <div id="Taxe" class="tab-pane fade in active">
+                                                                        <div class="notes-area-wrap">
+                                                                            <div class="note-heading-indicate">
+                                                                            <h3 class="text-primary"><i
+                                                                                class="fa fa-comments-o"></i>
+                                                                                Sélectionner taxe
+                                                                            </h3>
+                                                                            <div style="font-size: 20px;color: black;margin: 20px;"
+                                                                                class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <div
+                                                                                        class="ts-custom-check">
+                                                                                        <div
+                                                                                        class="onoffswitch">
+                                                                                        <input
+                                                                                            formControlName="timber"
+                                                                                            style="margin-right: 17px;"
+                                                                                            type="checkbox"
+                                                                                            name="collapsemenu"
+                                                                                            class="onoffswitch-checkbox"
+                                                                                            id="mycheck"
+                                                                                            [(ngModel)]="isChecked"
+                                                                                            (click)="timbreChange($event)">
+                                                                                        <p id="text"
+                                                                                            style="display:none">
+                                                                                            Checkbox is
+                                                                                            CHECKED!
+                                                                                        </p>
+                                                                                        <label
+                                                                                            class="onoffswitch-label"
+                                                                                            for="mycheck">
+                                                                                        Timbre fiscal
+                                                                                        </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="Devise"
+                                                                        class="tab-pane fade in active">
+                                                                        <div class="devise-area-wrap">
+                                                                            <div class="devise-heading-indicate">
+                                                                            <select class="form-control"
+                                                                                style="width: 350px;"
+                                                                                formControlName="devise"
+                                                                                id="ExamplePays">
+                                                                                <option value="0"></option>
+                                                                                <option value="ADP">ADP</option>
+                                                                                <option value="AED">AED</option>
+                                                                                <option value="AFA">AFA</option>
+                                                                                <option value="AFN">AFN</option>
+                                                                                <option value="ALK">ALK</option>
+                                                                                <option value="ALL">ALL</option>
+                                                                                <option value="AMD">AMD</option>
+                                                                                <option value="ANG">ANG</option>
+                                                                                <option value="AOA">AOA</option>
+                                                                                <option value="AOK">AOK</option>
+                                                                                <option value="AON">AON</option>
+                                                                                <option value="AOR">AOR</option>
+                                                                                <option value="ARA">ARA</option>
+                                                                                <option value="ARL">ARL</option>
+                                                                                <option value="ARM">ARM</option>
+                                                                                <option value="ARP">ARP</option>
+                                                                                <option value="ARS">ARS</option>
+                                                                                <option value="ATS">ATS</option>
+                                                                                <option value="AUD">AUD</option>
+                                                                                <option value="AWG">AWG</option>
+                                                                                <option value="AZM">AZM</option>
+                                                                                <option value="AZN">AZN</option>
+                                                                                <option value="BAD">BAD</option>
+                                                                                <option value="BAM">BAM</option>
+                                                                                <option value="BAN">BAN</option>
+                                                                                <option value="BBD">BBD</option>
+                                                                                <option value="BDT">BDT</option>
+                                                                                <option value="BEC">BEC</option>
+                                                                                <option value="BEF">BEF</option>
+                                                                                <option value="BEL">BEL</option>
+                                                                                <option value="BGL">BGL</option>
+                                                                                <option value="BGM">BGM</option>
+                                                                                <option value="BGN">BGN</option>
+                                                                                <option value="BGO">BGO</option>
+                                                                                <option value="BHD">BHD</option>
+                                                                                <option value="BIF">BIF</option>
+                                                                                <option value="BMD">BMD</option>
+                                                                                <option value="BND">BND</option>
+                                                                                <option value="BOB">BOB</option>
+                                                                                <option value="BOL">BOL</option>
+                                                                                <option value="BOP">BOP</option>
+                                                                                <option value="BOV">BOV</option>
+                                                                                <option value="BRB">BRB</option>
+                                                                                <option value="BRC">BRC</option>
+                                                                                <option value="BRE">BRE</option>
+                                                                                <option value="BRL">BRL</option>
+                                                                                <option value="BRN">BRN</option>
+                                                                                <option value="BRR">BRR</option>
+                                                                                <option value="BRZ">BRZ</option>
+                                                                                <option value="BSD">BSD</option>
+                                                                                <option value="BTN">BTN</option>
+                                                                                <option value="BUK">BUK</option>
+                                                                                <option value="BWP">BWP</option>
+                                                                                <option value="BYB">BYB</option>
+                                                                                <option value="BYN">BYN</option>
+                                                                                <option value="BYR">BYR</option>
+                                                                                <option value="BZD">BZD</option>
+                                                                                <option value="CAD">CAD</option>
+                                                                                <option value="CDF">CDF</option>
+                                                                                <option value="CHE">CHE</option>
+                                                                                <option value="CHF">CHF</option>
+                                                                                <option value="CHW">CHW</option>
+                                                                                <option value="CLE">CLE</option>
+                                                                                <option value="CLF">CLF</option>
+                                                                                <option value="CLP">CLP</option>
+                                                                                <option value="CNH">CNH</option>
+                                                                                <option value="CNX">CNX</option>
+                                                                                <option value="CNY">CNY</option>
+                                                                                <option value="COP">COP</option>
+                                                                                <option value="COU">COU</option>
+                                                                                <option value="CRC">CRC</option>
+                                                                                <option value="CSD">CSD</option>
+                                                                                <option value="CSK">CSK</option>
+                                                                                <option value="CUC">CUC</option>
+                                                                                <option value="CUP">CUP</option>
+                                                                                <option value="CVE">CVE</option>
+                                                                                <option value="CYP">CYP</option>
+                                                                                <option value="CZK">CZK</option>
+                                                                                <option value="DDM">DDM</option>
+                                                                                <option value="DEM">DEM</option>
+                                                                                <option value="DJF">DJF</option>
+                                                                                <option value="DKK">DKK</option>
+                                                                                <option value="DOP">DOP</option>
+                                                                                <option value="DZD">DZD</option>
+                                                                                <option value="ECS">ECS</option>
+                                                                                <option value="ECV">ECV</option>
+                                                                                <option value="EEK">EEK</option>
+                                                                                <option value="EGP">EGP</option>
+                                                                                <option value="ERN">ERN</option>
+                                                                                <option value="ESA">ESA</option>
+                                                                                <option value="ESB">ESB</option>
+                                                                                <option value="ESP">ESP</option>
+                                                                                <option value="ETB">ETB</option>
+                                                                                <option value="FIM">FIM</option>
+                                                                                <option value="FJD">FJD</option>
+                                                                                <option value="FKP">FKP</option>
+                                                                                <option value="FRF">FRF</option>
+                                                                                <option value="GBP">GBP</option>
+                                                                                <option value="GEK">GEK</option>
+                                                                                <option value="GHC">GHC</option>
+                                                                                <option value="GHS">GHS</option>
+                                                                                <option value="GIP">GIP</option>
+                                                                                <option value="GMD">GMD</option>
+                                                                                <option value="GNF">GNF</option>
+                                                                                <option value="GNS">GNS</option>
+                                                                                <option value="GQE">GQE</option>
+                                                                                <option value="GRD">GRD</option>
+                                                                                <option value="GTQ">GTQ</option>
+                                                                                <option value="GWE">GWE</option>
+                                                                                <option value="GWP">GWP</option>
+                                                                                <option value="GYD">GYD</option>
+                                                                                <option value="HKD">HKD</option>
+                                                                                <option value="HNL">HNL</option>
+                                                                                <option value="HRD">HRD</option>
+                                                                                <option value="HRK">HRK</option>
+                                                                                <option value="HTG">HTG</option>
+                                                                                <option value="HUF">HUF</option>
+                                                                                <option value="IDR">IDR</option>
+                                                                                <option value="IEP">IEP</option>
+                                                                                <option value="ILP">ILP</option>
+                                                                                <option value="ILR">ILR</option>
+                                                                                <option value="ILS">ILS</option>
+                                                                                <option value="INR">INR</option>
+                                                                                <option value="IQD">IQD</option>
+                                                                                <option value="IRR">IRR</option>
+                                                                                <option value="ISJ">ISJ</option>
+                                                                                <option value="ISK">ISK</option>
+                                                                                <option value="ITL">ITL</option>
+                                                                                <option value="JMD">JMD</option>
+                                                                                <option value="JOD">JOD</option>
+                                                                                <option value="JPY">JPY</option>
+                                                                                <option value="KES">KES</option>
+                                                                                <option value="KGS">KGS</option>
+                                                                                <option value="KHR">KHR</option>
+                                                                                <option value="KMF">KMF</option>
+                                                                                <option value="KPW">KPW</option>
+                                                                                <option value="KRH">KRH</option>
+                                                                                <option value="KRO">KRO</option>
+                                                                                <option value="KRW">KRW</option>
+                                                                                <option value="KWD">KWD</option>
+                                                                                <option value="KYD">KYD</option>
+                                                                                <option value="KZT">KZT</option>
+                                                                                <option value="LAK">LAK</option>
+                                                                                <option value="LBP">LBP</option>
+                                                                                <option value="LKR">LKR</option>
+                                                                                <option value="LRD">LRD</option>
+                                                                                <option value="LSL">LSL</option>
+                                                                                <option value="LTL">LTL</option>
+                                                                                <option value="LTT">LTT</option>
+                                                                                <option value="LUC">LUC</option>
+                                                                                <option value="LUF">LUF</option>
+                                                                                <option value="LUL">LUL</option>
+                                                                                <option value="LVL">LVL</option>
+                                                                                <option value="LVR">LVR</option>
+                                                                                <option value="LYD">LYD</option>
+                                                                                <option value="MAD">MAD</option>
+                                                                                <option value="MAF">MAF</option>
+                                                                                <option value="MCF">MCF</option>
+                                                                                <option value="MDC">MDC</option>
+                                                                                <option value="MDL">MDL</option>
+                                                                                <option value="MGA">MGA</option>
+                                                                                <option value="MGF">MGF</option>
+                                                                                <option value="MKD">MKD</option>
+                                                                                <option value="MKN">MKN</option>
+                                                                                <option value="MLF">MLF</option>
+                                                                                <option value="MMK">MMK</option>
+                                                                                <option value="MNT">MNT</option>
+                                                                                <option value="MOP">MOP</option>
+                                                                                <option value="MRO">MRO</option>
+                                                                                <option value="MRU">MRU</option>
+                                                                                <option value="MTL">MTL</option>
+                                                                                <option value="MTP">MTP</option>
+                                                                                <option value="MUR">MUR</option>
+                                                                                <option value="MVP">MVP</option>
+                                                                                <option value="MVR">MVR</option>
+                                                                                <option value="MWK">MWK</option>
+                                                                                <option value="MXN">MXN</option>
+                                                                                <option value="MXP">MXP</option>
+                                                                                <option value="MXV">MXV</option>
+                                                                                <option value="MYR">MYR</option>
+                                                                                <option value="MZE">MZE</option>
+                                                                                <option value="MZM">MZM</option>
+                                                                                <option value="MZN">MZN</option>
+                                                                                <option value="NAD">NAD</option>
+                                                                                <option value="NGN">NGN</option>
+                                                                                <option value="NIC">NIC</option>
+                                                                                <option value="NIO">NIO</option>
+                                                                                <option value="NLG">NLG</option>
+                                                                                <option value="NOK">NOK</option>
+                                                                                <option value="NPR">NPR</option>
+                                                                                <option value="NZD">NZD</option>
+                                                                                <option value="OMR">OMR</option>
+                                                                                <option value="PAB">PAB</option>
+                                                                                <option value="PEI">PEI</option>
+                                                                                <option value="PEN">PEN</option>
+                                                                                <option value="PES">PES</option>
+                                                                                <option value="PGK">PGK</option>
+                                                                                <option value="PHP">PHP</option>
+                                                                                <option value="PKR">PKR</option>
+                                                                                <option value="PLN">PLN</option>
+                                                                                <option value="PTE">PTE</option>
+                                                                                <option value="PYG">PYG</option>
+                                                                                <option value="QAR">QAR</option>
+                                                                                <option value="RHD">RHD</option>
+                                                                                <option value="ROL">ROL</option>
+                                                                                <option value="RON">RON</option>
+                                                                                <option value="RSD">RSD</option>
+                                                                                <option value="RUB">RUB</option>
+                                                                                <option value="RUR">RUR</option>
+                                                                                <option value="RWF">RWF</option>
+                                                                                <option value="SAR">SAR</option>
+                                                                                <option value="SBD">SBD</option>
+                                                                                <option value="SCR">SCR</option>
+                                                                                <option value="SDD">SDD</option>
+                                                                                <option value="SDG">SDG</option>
+                                                                                <option value="SDP">SDP</option>
+                                                                                <option value="SEK">SEK</option>
+                                                                                <option value="SGD">SGD</option>
+                                                                                <option value="SHP">SHP</option>
+                                                                                <option value="SIT">SIT</option>
+                                                                                <option value="Skk">Skk</option>
+                                                                                <option value="SLL">SLL</option>
+                                                                                <option value="SOS">SOS</option>
+                                                                                <option value="SRD">SRD</option>
+                                                                                <option value="SRG">SRG</option>
+                                                                                <option value="SSP">SSP</option>
+                                                                                <option value="STD">STD</option>
+                                                                                <option value="STN">STN</option>
+                                                                                <option value="SUR">SUR</option>
+                                                                                <option value="SVC">SVC</option>
+                                                                                <option value="SYP">SYP</option>
+                                                                                <option value="SZL">SZL</option>
+                                                                                <option value="THB">THB</option>
+                                                                                <option value="TJR">TJR</option>
+                                                                                <option value="TJS">TJS</option>
+                                                                                <option value="TMM">TMM</option>
+                                                                                <option value="TMT">TMT</option>
+                                                                                <option value="TND">TND</option>
+                                                                                <option value="TOP">TOP</option>
+                                                                                <option value="TPE">TPE</option>
+                                                                                <option value="TRL">TRL</option>
+                                                                                <option value="TRY">TRY</option>
+                                                                                <option value="TTD">TTD</option>
+                                                                                <option value="TWD">TWD</option>
+                                                                                <option value="TZS">TZS</option>
+                                                                                <option value="UAH">UAH</option>
+                                                                                <option value="UAK">UAK</option>
+                                                                                <option value="UGS">UGS</option>
+                                                                                <option value="UGX">UGX</option>
+                                                                            <option value="USD">USD</option>
+                                                                            <option value="USN">USN</option>
+                                                                            <option value="USS">USS</option>
+                                                                            <option value="UYI">UYI</option>
+                                                                            <option value="UYP">UYP</option>
+                                                                            <option value="UYU">UYU</option>
+                                                                            <option value="UYW">UYW</option>
+                                                                            <option value="UZS">UZS</option>
+                                                                            <option value="VEB">VEB</option>
+                                                                            <option value="VEF">VEF</option>
+                                                                            <option value="VES">VES</option>
+                                                                            <option value="VND">VND</option>
+                                                                            <option value="VNN">VNN</option>
+                                                                            <option value="VUV">VUV</option>
+                                                                            <option value="WST">WST</option>
+                                                                            <option value="XAF">XAF</option>
+                                                                            <option value="XCD">XCD</option>
+                                                                            <option value="XEU">XEU</option>
+                                                                            <option value="XFO">XFO</option>
+                                                                            <option value="XFU">XFU</option>
+                                                                            <option value="XOF">XOF</option>
+                                                                            <option value="XPF">XPF</option>
+                                                                            <option value="XRU">XRU</option>
+                                                                            <option value="YER">YER</option>
+                                                                            <option value="YDD">YDD</option>
+                                                                            <option value="YUD">YUD</option>
+                                                                            <option value="YUR">YUR</option>
+                                                                            <option value="YUM">YUM</option>
+                                                                            <option value="YUN">YUN</option>
+                                                                            <option value="ZAL">ZAL</option>
+                                                                            <option value="ZAR">ZAR</option>
+                                                                            <option value="ZMK">ZMK</option>
+                                                                            <option value="ZMW">ZMW</option>
+                                                                            <option value="ZRN">ZRN</option>
+                                                                            <option value="ZRZ">ZRZ</option>
+                                                                            <option value="ZWD">ZWD</option>
+                                                                            <option value="ZWL">ZWL</option>
+                                                                            <option value="ZWR">ZWR</option>
+                                                                        </select>
+                                                                        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div> 
+                                                </div>   
+                                            </form>
+                                        </main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Your Website
+        2021</span>
+        </div>
+    </div>
+</footer>

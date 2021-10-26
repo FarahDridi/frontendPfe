@@ -1,0 +1,42 @@
+h6{
+    margin-bottom: 40px;
+}
+
+input[type=radio]{
+    background-color:transparent;
+    border:none;
+    width:20px;
+    margin-left: 50px;
+    
+}
+.areb{
+    margin-left: 270px;
+    margin-top: -30px;
+}
+.pp{
+    display: inline-block;
+    margin-right: 12px;
+}
+.fai, .fais, .faiss, .faisss{
+    display: block;
+}
+.lou, .louu, .louuu{
+    display:block;
+}
+input{
+    border-color: silver;
+}
+textarea{
+    border-color: silver;
+    width: 340px;
+    height: 115px;
+}
+.aaje{
+
+    margin-left: 650px;
+    margin-top: -143px;
+}
+
+#professionnel:checked ~ .professionnel{
+    visibility: visible;
+} 

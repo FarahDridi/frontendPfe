@@ -1,0 +1,33 @@
+h6{
+    margin-bottom: 40px;
+}
+
+input[type=radio]{
+    background-color:transparent;
+    border:none;
+    width:20px;
+    margin-left: 50px;
+    
+}
+.areb{
+    margin-left: 230px;
+    margin-top: -30px;
+}
+.pp{
+    display: inline-block;
+    margin-right: 100px;
+}
+.fai, .fais, .faiss, .faisss , .fa{
+    display: block;
+}
+.lou, .louu, .louuu{
+    display:block;
+}
+input{
+    border-color :white;
+}
+textarea{
+    border-color: silver;
+    width: 430px;
+    height: 135px;
+}

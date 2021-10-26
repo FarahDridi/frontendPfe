@@ -1,0 +1,1134 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+
+
+        <!-- Topbar -->
+        <app-topbar></app-topbar>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Paramétres <small>/ Utilisateur <small>/ Ajouter
+                            utilisateur</small></small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="card-body">
+                    <div class="card-body" style="padding:40px; background-color: white;">
+                        <h6 style="color: rgb(13, 201, 154);font-weight: bold;">INFORMATIONS PERSONNELLES</h6>
+                        <hr>
+                        <main>
+                            <div class="ng-star-inserted">
+                                <div class="container-fluid">
+                                    <div class="row" id="project">
+                                        <div class="col-12">
+                                            <div class="col-sm-12 p-t-20 p-r-0 p-l-0"></div>
+                                            <div _ngcontent-jqp-c23="" class="row justify-content-center">
+                                                <div _ngcontent-jqp-c23="" class="col-8">
+                                                    <div style="border: 1px solid black;" class="card">
+                                                        <br>
+                                                        <div style="margin-left: 25px;" class="card-body">
+                                                            <form [formGroup]="usersAddForm">
+                                                                <div class="row">
+                                                                    <div class="pp">
+                                                                        <label for="nom">
+                                                                            Nom <span style="color: red;">*</span>
+                                                                        </label><input calss="fai" class="form-control"
+                                                                            type="text" formControlName="nom"
+                                                                            id="exampleNom" size="28">
+                                                                        <div *ngIf="nom.touched && nom.invalid"
+                                                                            class="text-danger">
+                                                                            <div *ngIf="nom.errors.required">
+                                                                                <small>* Champ
+                                                                                    obligatoire</small>
+                                                                            </div>
+                                                                            <div *ngIf="nom.errors.pattern">
+                                                                                <small>* Champ invalide</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="pp">
+                                                                        <label for="prenom">
+                                                                            Prénom <span style="color: red;">*</span>
+                                                                        </label><input class="fais" class="form-control"
+                                                                            type="text" formControlName="prenom"
+                                                                            id="examplePrenom" size="28">
+                                                                        <div *ngIf="prenom.touched && prenom.invalid"
+                                                                            class="text-danger">
+                                                                            <div *ngIf="prenom.errors.required">
+                                                                                <small>* Champ
+                                                                                    obligatoire</small>
+                                                                            </div>
+                                                                            <div *ngIf="nom.errors.pattern">
+                                                                                <small>* Champ invalide</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                <div class="row">
+                                                                    <div class="pp">
+                                                                        <label for="email">
+                                                                            E-mail <span style="color: red;">*</span>
+                                                                        </label><input class="fai" class="form-control"
+                                                                            type="email" formControlName="email"
+                                                                            id="exampleEmail" size="28">
+                                                                        <div *ngIf="email.touched && email.invalid"
+                                                                            class="text-danger">
+                                                                            <div *ngIf="email.errors.required">
+                                                                                <small>* Champ
+                                                                                    obligatoire</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!---->
+
+                                                                    <div class="pp">
+                                                                        <label for="password">
+                                                                            Mot de
+                                                                            passe <span
+                                                                                style="color: red;">*</span></label><input
+                                                                            class="fais" class="form-control"
+                                                                            type="password" formControlName="password"
+                                                                            id="examplePassword" size="28">
+                                                                        <div *ngIf="password.touched && password.invalid"
+                                                                            class="text-danger">
+                                                                            <div *ngIf="password.errors.required">
+                                                                                <small>* Champ
+                                                                                    obligatoire</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!---->
+                                                                <br>
+                                                                <div class="row">
+                                                                    <div class="pp">
+                                                                        <label for="num">
+                                                                            Numéro de
+                                                                            téléphone <span
+                                                                                style="color: red;">*</span></label><input
+                                                                            class="fai" class="form-control" type="number"
+                                                                            formControlName="num" id="exampleNum"
+                                                                            size="22.5" style="margin-left: 63px;">
+                                                                        <div *ngIf="num.touched && num.invalid"
+                                                                            class="text-danger">
+                                                                            <div *ngIf="num.errors.required">
+                                                                                <small style="margin-left: 63px;">* Champ
+                                                                                    obligatoire</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pp">
+                                                                        <label for="target">
+                                                                            Objectif
+                                                                            commercial
+                                                                            mensuel <span
+                                                                                style="color: red;">*</span></label><input
+                                                                            class="fais" class="form-control"
+                                                                            type="number" formControlName="target"
+                                                                            id="exampleTarget" size="22.5">
+                                                                        <div *ngIf="target.touched && target.invalid"
+                                                                            class="text-danger">
+                                                                            <div *ngIf="target.errors.required">
+                                                                                <small>* Champ
+                                                                                    obligatoire</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="#" data-toggle="modal"
+                                                                    data-target="#logoutModal">
+                                                                    <div _ngcontent-jqp-c23=""
+                                                                        class="form-group col-12">
+                                                                        <br>
+                                                                        <br>
+                                                                        <label for="" style="margin-left: 170px;margin-bottom: -50px;">
+                                                                            Choisir fonctionnalités <span
+                                                                                style="color: red;">*</span></label>
+                                                                        <div _ngcontent-jqp-c23=""
+                                                                            class="col-12 rectangle">
+                                                                            <div _ngcontent-jqp-c23=""
+                                                                                class="row justify-content-center">
+                                                                                <!---->
+                                                                                <div _ngcontent-jqp-c23=""
+                                                                                    class="col-md-4 col-sm-12 col-xs-12 rectangle-company m-t-30 m-b-30 m-l-20 m-r-20 text-center ng-star-inserted">
+                                                                                    <div _ngcontent-jqp-c23=""
+                                                                                        class="row">
+                                                                                        <div _ngcontent-jqp-c23=""
+                                                                                            class="col-12 m-t-30 m-b-20">
+                                                                                            <i class="fas fa-plus text-success"
+                                                                                                style=" background: #e0e0e0;padding: 1em;
+                                                                                                        width: 37px;
+                                                                                                        text-align: center;
+                                                                                                        display: inline;
+                                                                                                        font-size: 9px;
+                                                                                                        border-radius: 50%;
+                                                                                                        line-height: 10px;"></i>
+
+                                                                                        </div>
+                                                                                        <div _ngcontent-jqp-c23=""
+                                                                                            class="col-12">
+                                                                                            <span _ngcontent-jqp-c23=""
+                                                                                                style="height: 26px;
+                                                                                                        color: #313131;
+                                                                                                        font-family: Arial;
+                                                                                                        font-size: 12px;
+                                                                                                        line-height: 13px;
+                                                                                                        text-align: center;
+                                                                                                      ">Les droits d'accés</span>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!---->
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </main>
+                        <br>
+                        <div _ngcontent-jqp-c23="" class="card-footer">
+                            <button style="font-size: 20px;" [disabled]="usersAddForm.invalid" class="btn btn-success pull-right" type="button"
+                                (click)="User()">
+                                Ajouter
+                            </button><button style="font-size: 20px;" routerLink="/users/list" class="btn btn-light m-r-10" type="button"
+                                tabindex="0"> Annuler
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <form [formGroup]="usersForm">
+                    <div style="margin-left: 127px;" class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                                <div class="row">
+                                    <div class="col-6" style="max-height: 100px"><span _ngcontent-bjt-c23=""
+                                            class="titreModal m-t-30 m-l-30 float-left">AUTORISATION</span></div>
+                                    <div class="col-6" style="max-height: 100px">
+                                        <button [disabled]="usersForm.invalid" (click)="UserPop()"
+                                            class="btn btn-success btn-lg btn-block float-right m-t-30 m-r-30 m-b-20"
+                                            style="
+                                               height: 34px;
+                                               width: 128px;
+                                               border-radius: 4px;
+                                               background-color: #10da4c;
+                                               height: 34px;
+                                               width: 128px;
+                                               border-radius: 4px;
+                                               color: #fff;
+                                               font-family: Arial;
+                                               font-size: 16px;
+                                               line-height: 18px;
+                                               text-align: center; " type="submit"><span
+                                                aria-label="Open">Enregistrer</span>
+                                        </button>
+                                        <button id="closeModalButton" data-toggle="modal" data-target="#deleteModal"
+                                            class="btn btn-default" data-dismiss="modal"
+                                            class="btn btn-lg btn-block btn-light float-right m-t-30 m-r-10 m-b-20"
+                                            style="
+                                                   height: 34px;
+                                                   border-radius: 4px;
+                                                   height: 34px;
+                                                   width: 128px;
+                                                   border-radius: 4px;
+                                                   font-family: Arial;
+                                                   font-size: 16px;
+                                                   line-height: 18px;
+                                                   text-align: center;" type="button">
+                                            <span>Annuler</span>
+                                        </button>
+
+                                    </div>
+                                    <div class="col m-l-30 m-r-30 div-permission">
+                                        <br>
+                                        <div class="row">
+                                            <label for="ent"></label>
+                                            <select class="form-control" formControlName="ent" id="exampleEnt"
+                                                style="margin-left: 35px;">
+
+                                                <option value="0"></option>
+                                                <option value="Entreprise">Entreprise </option>
+                                            </select>
+                                            <div *ngIf="ent.touched && ent.invalid" class="text-danger">
+                                                <div *ngIf="ent.errors.required">
+                                                    <small>* Champ obligatoire</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div _ngcontent-bjt-c23="" class="row default-according style-1 faq-accordion">
+                                            <div _ngcontent-bjt-c23="" class="col m-l-20 m-r-20">
+                                                <div _ngcontent-bjt-c23="" class="card m-t-10"
+                                                    style="border: 1px solid #e0e0e0">
+                                                    <div _ngcontent-bjt-c23="" class="card-header"
+                                                        style="background-color: none !important">
+                                                        <h5 _ngcontent-bjt-c23="" class="mb-0"><button
+                                                                _ngcontent-bjt-c23="" aria-controls="collapse"
+                                                                class="btn btn-link collapsed pl-0"
+                                                                aria-expanded="true">
+                                                                <div _ngcontent-bjt-c23="" _nghost-bjt-c11="">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="feather feather-help-circle"
+                                                                        _ngcontent-bjt-c11="">
+                                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3">
+                                                                        </path>
+                                                                        <line x1="12" y1="17" x2="12" y2="17"></line>
+                                                                    </svg>
+                                                                </div> ROUTE
+                                                            </button>
+                                                            <div _ngcontent-bjt-c23="" class="float-right" style="
+                                      position: absolute;
+                                      top: 21px;
+                                      right: 38px;
+                                      color: #525f7f;
+                                      font-family: Nunito;
+                                      font-size: 9px;
+                                      line-height: 19px;
+                                    ">
+                                                            </div>
+                                                        </h5>
+                                                    </div>
+                                                    <div _ngcontent-bjt-c23="" class="collapse show"
+                                                        style="background-color: white">
+                                                        <div _ngcontent-bjt-c23="" class="row">
+                                                            <div _ngcontent-bjt-c23="" class="col-12">
+                                                                <table _ngcontent-bjt-c23="" class="table" style="
+                                        font-family: Nunito;
+                                        font-size: 14px;
+                                        line-height: 19px;
+                                      ">
+                                                                    <thead style="color:rgb(45, 182, 125);"
+                                                                        _ngcontent-bjt-c23="" class="header">
+                                                                        <tr _ngcontent-bjt-c23="">
+                                                                            <th _ngcontent-bjt-c23=""></th>
+                                                                            <th _ngcontent-bjt-c23=""
+                                                                                class="text-center">
+                                                                                CLIENT </th>
+                                                                            <th _ngcontent-bjt-c23=""
+                                                                                class="text-center">
+                                                                                FOURNISSEUR </th>
+                                                                            <th _ngcontent-bjt-c23=""
+                                                                                class="text-center">
+                                                                                PRODUIT ET SERVICE </th>
+                                                                            <th _ngcontent-bjt-c23=""
+                                                                                class="text-center">
+                                                                                VENTE </th>
+                                                                            <th _ngcontent-bjt-c23=""
+                                                                                class="text-center">
+                                                                                ACHAT </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody style="color:black;" _ngcontent-bjt-c23="">
+                                                                        <tr _ngcontent-bjt-c23="">
+                                                                            <td _ngcontent-bjt-c23=""></td>
+                                                                            <td _ngcontent-bjt-c23="">
+                                                                                <div class="cont">
+                                                                                    <div class="toggle-btn"
+                                                                                        onclick="this.classList.toggle('active')">
+                                                                                        <div class="inner-circle"></div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </td>
+                                                                            <td _ngcontent-bjt-c23="">
+                                                                                <div class="cont">
+                                                                                    <div class="toggle-btn"
+                                                                                        onclick="this.classList.toggle('active')">
+                                                                                        <div class="inner-circle"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td _ngcontent-bjt-c23="">
+                                                                                <div class="cont">
+                                                                                    <div class="toggle-btn"
+                                                                                        onclick="this.classList.toggle('active')">
+                                                                                        <div class="inner-circle"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td _ngcontent-bjt-c23="">
+                                                                                <div class="cont">
+                                                                                    <div class="toggle-btn"
+                                                                                        onclick="this.classList.toggle('active')">
+                                                                                        <div class="inner-circle"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td _ngcontent-bjt-c23="">
+                                                                                <div class="cont">
+                                                                                    <div class="toggle-btn"
+                                                                                        onclick="this.classList.toggle('active')">
+                                                                                        <div class="inner-circle"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---->
+
+
+                                        <div class="nav-item active">
+                                            <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+
+                                                <span style="padding:10px">Plus de détails &nbsp;
+                                                    <i _ngcontent-gsq-c27="" class="fa fa-chevron-right"></i></span>
+
+                                                <br>
+                                            </a>
+                                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                                data-parent="#accordionSidebar">
+                                                <div class="bg-white py-2 collapse-inner rounded">
+                                                    <div _ngcontent-bjt-c23=""
+                                                        class="row default-according style-1 faq-accordion ng-star-inserted">
+                                                        <div _ngcontent-bjt-c23="" class="col m-l-20 m-r-20">
+                                                            <div _ngcontent-bjt-c23="" class="card m-t-20"
+                                                                style="border: 1px solid #e0e0e0">
+                                                                <div _ngcontent-bjt-c23="" class="card-header"
+                                                                    style="background-color: none !important">
+                                                                    <h5 _ngcontent-bjt-c23="" class="mb-0"><button
+                                                                            _ngcontent-bjt-c23=""
+                                                                            aria-controls="collapse"
+                                                                            class="btn btn-link collapsed pl-0"
+                                                                            aria-expanded="true">
+                                                                            <div _ngcontent-bjt-c23=""
+                                                                                _nghost-bjt-c11="">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24" fill="none"
+                                                                                    stroke="currentColor"
+                                                                                    stroke-width="2"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    class="feather feather-help-circle"
+                                                                                    _ngcontent-bjt-c11="">
+                                                                                    <circle cx="12" cy="12" r="10">
+                                                                                    </circle>
+                                                                                    <path
+                                                                                        d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3">
+                                                                                    </path>
+                                                                                    <line x1="12" y1="17" x2="12"
+                                                                                        y2="17"></line>
+                                                                                </svg>
+                                                                            </div> VENTE
+                                                                        </button>
+                                                                        <div _ngcontent-bjt-c23="" class="float-right"
+                                                                            style="
+                                              position: absolute;
+                                              top: 21px;
+                                              right: 38px;
+                                              color: #525f7f;
+                                              font-family: Nunito;
+                                              font-size: 9px;
+                                              line-height: 19px;
+                                            "></div>
+                                                                    </h5>
+                                                                </div>
+                                                                <div _ngcontent-bjt-c23="" class="collapse show"
+                                                                    style="background-color: white">
+                                                                    <div _ngcontent-bjt-c23="" class="row">
+                                                                        <div _ngcontent-bjt-c23="" class="col-12">
+                                                                            <table _ngcontent-bjt-c23="" class="table"
+                                                                                style="
+                                                font-family: Nunito;
+                                                font-size: 14px;
+                                                line-height: 19px;
+                                              ">
+                                                                                <thead style="color:rgb(45, 182, 125);"
+                                                                                    _ngcontent-bjt-c23=""
+                                                                                    class="header">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <th _ngcontent-bjt-c23=""></th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            ÉCRIRE </th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            LIRE </th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            ANNULER </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody style="color:black;"
+                                                                                    _ngcontent-bjt-c23="">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <td _ngcontent-bjt-c23=""
+                                                                                            class="text-left">
+                                                                                            DEVIS </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont1">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont1">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont1">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+
+
+
+                                                                                    <tr style="color:black;"
+                                                                                        _ngcontent-bjt-c23="">
+                                                                                        <td _ngcontent-bjt-c23=""
+                                                                                            class="text-left">
+                                                                                            FACTURE</td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont1">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont1">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont1">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+                                                    <div _ngcontent-bjt-c23=""
+                                                        class="row default-according style-1 faq-accordion ng-star-inserted">
+                                                        <div _ngcontent-bjt-c23="" class="col m-l-20 m-r-20">
+                                                            <div _ngcontent-bjt-c23="" class="card m-t-20"
+                                                                style="border: 1px solid #e0e0e0">
+                                                                <div _ngcontent-bjt-c23="" class="card-header"
+                                                                    style="background-color: none !important">
+                                                                    <h5 _ngcontent-bjt-c23="" class="mb-0"><button
+                                                                            _ngcontent-bjt-c23=""
+                                                                            aria-controls="collapse"
+                                                                            class="btn btn-link collapsed pl-0"
+                                                                            aria-expanded="true">
+                                                                            <div _ngcontent-bjt-c23=""
+                                                                                _nghost-bjt-c11="">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24" fill="none"
+                                                                                    stroke="currentColor"
+                                                                                    stroke-width="2"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    class="feather feather-help-circle"
+                                                                                    _ngcontent-bjt-c11="">
+                                                                                    <circle cx="12" cy="12" r="10">
+                                                                                    </circle>
+                                                                                    <path
+                                                                                        d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3">
+                                                                                    </path>
+                                                                                    <line x1="12" y1="17" x2="12"
+                                                                                        y2="17"></line>
+                                                                                </svg>
+                                                                            </div> ACHAT
+                                                                        </button>
+                                                                        <div _ngcontent-bjt-c23="" class="float-right"
+                                                                            style="
+                                              position: absolute;
+                                              top: 21px;
+                                              right: 38px;
+                                              color: #525f7f;
+                                              font-family: Nunito;
+                                              font-size: 9px;
+                                              line-height: 19px;
+                                            "></div>
+                                                                    </h5>
+                                                                </div>
+                                                                <div _ngcontent-bjt-c23="" class="collapse show"
+                                                                    style="background-color: white">
+                                                                    <div _ngcontent-bjt-c23="" class="row">
+                                                                        <div _ngcontent-bjt-c23="" class="col-12">
+                                                                            <table _ngcontent-bjt-c23="" class="table"
+                                                                                style="
+                                                font-family: Nunito;
+                                                font-size: 14px;
+                                                line-height: 19px;
+                                              ">
+                                                                                <thead style="color:rgb(45, 182, 125);"
+                                                                                    _ngcontent-bjt-c23=""
+                                                                                    class="header">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <th _ngcontent-bjt-c23=""></th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            ÉCRIRE </th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            LIRE </th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            ANNULER </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody style="color:black;"
+                                                                                    _ngcontent-bjt-c23="">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <td _ngcontent-bjt-c23=""
+                                                                                            class="text-left">
+                                                                                            COMMANDE FOURNISSEUR </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23>
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <td _ngcontent-bjt-c23=""
+                                                                                            class="text-left"> BON
+                                                                                            DE RÉCEPTION </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <td _ngcontent-bjt-c23=""
+                                                                                            class="text-left">
+                                                                                            FACTURE FOURNISSEUR </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont2">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+                                                    <div _ngcontent-bjt-c23=""
+                                                        class="row default-according style-1 faq-accordion ng-star-inserted">
+                                                        <div _ngcontent-bjt-c23="" class="col m-l-20 m-r-20">
+                                                            <div _ngcontent-bjt-c23="" class="card m-t-20"
+                                                                style="border: 1px solid #e0e0e0">
+                                                                <div _ngcontent-bjt-c23="" class="card-header"
+                                                                    style="background-color: none !important">
+                                                                    <h5 _ngcontent-bjt-c23="" class="mb-0"><button
+                                                                            _ngcontent-bjt-c23=""
+                                                                            aria-controls="collapse"
+                                                                            class="btn btn-link collapsed pl-0"
+                                                                            aria-expanded="true">
+                                                                            <div _ngcontent-bjt-c23=""
+                                                                                _nghost-bjt-c11="">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24" fill="none"
+                                                                                    stroke="currentColor"
+                                                                                    stroke-width="2"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    class="feather feather-help-circle"
+                                                                                    _ngcontent-bjt-c11="">
+                                                                                    <circle cx="12" cy="12" r="10">
+                                                                                    </circle>
+                                                                                    <path
+                                                                                        d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3">
+                                                                                    </path>
+                                                                                    <line x1="12" y1="17" x2="12"
+                                                                                        y2="17"></line>
+                                                                                </svg>
+                                                                            </div> CLIENT
+                                                                        </button>
+                                                                        <div _ngcontent-bjt-c23="" class="float-right"
+                                                                            style="
+                                              position: absolute;
+                                              top: 21px;
+                                              right: 38px;
+                                              color: #525f7f;
+                                              font-family: Nunito;
+                                              font-size: 9px;
+                                              line-height: 19px;
+                                            "></div>
+                                                                    </h5>
+                                                                </div>
+                                                                <div _ngcontent-bjt-c23="" class="collapse show"
+                                                                    style="background-color: white">
+                                                                    <div _ngcontent-bjt-c23="" class="row">
+                                                                        <div _ngcontent-bjt-c23="" class="col-12">
+                                                                            <table _ngcontent-bjt-c23="" class="table"
+                                                                                style="
+                                                font-family: Nunito;
+                                                font-size: 14px;
+                                                line-height: 19px;
+                                              ">
+                                                                                <thead style="color:rgb(45, 182, 125);"
+                                                                                    _ngcontent-bjt-c23=""
+                                                                                    class="header">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <th _ngcontent-bjt-c23=""></th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            ÉCRIRE </th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            LIRE </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody style="color:black;"
+                                                                                    _ngcontent-bjt-c23="">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <td _ngcontent-bjt-c23=""
+                                                                                            class="text-left">
+                                                                                            CLIENT </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont3">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont3">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+                                                    <div _ngcontent-bjt-c23=""
+                                                        class="row default-according style-1 faq-accordion ng-star-inserted">
+                                                        <div _ngcontent-bjt-c23="" class="col m-l-20 m-r-20">
+                                                            <div _ngcontent-bjt-c23="" class="card m-t-20"
+                                                                style="border: 1px solid #e0e0e0">
+                                                                <div _ngcontent-bjt-c23="" class="card-header"
+                                                                    style="background-color: none !important">
+                                                                    <h5 _ngcontent-bjt-c23="" class="mb-0"><button
+                                                                            _ngcontent-bjt-c23=""
+                                                                            aria-controls="collapse"
+                                                                            class="btn btn-link collapsed pl-0"
+                                                                            aria-expanded="true">
+                                                                            <div _ngcontent-bjt-c23=""
+                                                                                _nghost-bjt-c11="">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24" fill="none"
+                                                                                    stroke="currentColor"
+                                                                                    stroke-width="2"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    class="feather feather-help-circle"
+                                                                                    _ngcontent-bjt-c11="">
+                                                                                    <circle cx="12" cy="12" r="10">
+                                                                                    </circle>
+                                                                                    <path
+                                                                                        d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3">
+                                                                                    </path>
+                                                                                    <line x1="12" y1="17" x2="12"
+                                                                                        y2="17"></line>
+                                                                                </svg>
+                                                                            </div> FOURNISSEUR
+                                                                        </button>
+                                                                        <div _ngcontent-bjt-c23="" class="float-right"
+                                                                            style="
+                                              position: absolute;
+                                              top: 21px;
+                                              right: 38px;
+                                              color: #525f7f;
+                                              font-family: Nunito;
+                                              font-size: 9px;
+                                              line-height: 19px;
+                                            "></div>
+                                                                    </h5>
+                                                                </div>
+                                                                <div _ngcontent-bjt-c23="" class="collapse show"
+                                                                    style="background-color: white">
+                                                                    <div _ngcontent-bjt-c23="" class="row">
+                                                                        <div _ngcontent-bjt-c23="" class="col-12">
+                                                                            <table _ngcontent-bjt-c23="" class="table"
+                                                                                style="
+                                                font-family: Nunito;
+                                                font-size: 14px;
+                                                line-height: 19px;
+                                              ">
+                                                                                <thead style="color:rgb(45, 182, 125);"
+                                                                                    _ngcontent-bjt-c23=""
+                                                                                    class="header">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <th _ngcontent-bjt-c23=""></th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            ÉCRIRE </th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            LIRE </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody style="color:black;"
+                                                                                    _ngcontent-bjt-c23="">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <td _ngcontent-bjt-c23=""
+                                                                                            class="text-left">
+                                                                                            FOURNISSEUR </td>
+                                                                                        <td _ngcontent-bjt-c23>
+                                                                                            <div class="cont4">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont4">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+                                                    <div _ngcontent-bjt-c23=""
+                                                        class="row default-according style-1 faq-accordion ng-star-inserted">
+                                                        <div _ngcontent-bjt-c23="" class="col m-l-20 m-r-20">
+                                                            <div _ngcontent-bjt-c23="" class="card m-t-20"
+                                                                style="border: 1px solid #e0e0e0">
+                                                                <div _ngcontent-bjt-c23="" class="card-header"
+                                                                    style="background-color: none !important">
+                                                                    <h5 _ngcontent-bjt-c23="" class="mb-0"><button
+                                                                            _ngcontent-bjt-c23=""
+                                                                            aria-controls="collapse"
+                                                                            class="btn btn-link collapsed pl-0"
+                                                                            aria-expanded="true">
+                                                                            <div _ngcontent-bjt-c23=""
+                                                                                _nghost-bjt-c11="">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24" fill="none"
+                                                                                    stroke="currentColor"
+                                                                                    stroke-width="2"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    class="feather feather-help-circle"
+                                                                                    _ngcontent-bjt-c11="">
+                                                                                    <circle cx="12" cy="12" r="10">
+                                                                                    </circle>
+                                                                                    <path
+                                                                                        d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3">
+                                                                                    </path>
+                                                                                    <line x1="12" y1="17" x2="12"
+                                                                                        y2="17"></line>
+                                                                                </svg>
+                                                                            </div> PRODUIT ET SERVICE
+                                                                        </button>
+                                                                        <div _ngcontent-bjt-c23="" class="float-right"
+                                                                            style="
+                                              position: absolute;
+                                              top: 21px;
+                                              right: 38px;
+                                              color: #525f7f;
+                                              font-family: Nunito;
+                                              font-size: 9px;
+                                              line-height: 19px;
+                                            "></div>
+                                                                    </h5>
+                                                                </div>
+                                                                <div _ngcontent-bjt-c23="" class="collapse show"
+                                                                    style="background-color: white">
+                                                                    <div _ngcontent-bjt-c23="" class="row">
+                                                                        <div _ngcontent-bjt-c23="" class="col-12">
+                                                                            <table _ngcontent-bjt-c23="" class="table"
+                                                                                style="
+                                                font-family: Nunito;
+                                                font-size: 14px;
+                                                line-height: 19px;
+                                              ">
+                                                                                <thead style="color:rgb(45, 182, 125);"
+                                                                                    _ngcontent-bjt-c23=""
+                                                                                    class="header">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <th _ngcontent-bjt-c23=""></th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            ÉCRIRE </th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            LIRE </th>
+                                                                                        <th _ngcontent-bjt-c23=""
+                                                                                            class="text-center">
+                                                                                            VOIR LE PRIX DES COÛTS </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody style="color:black;"
+                                                                                    _ngcontent-bjt-c23="">
+                                                                                    <tr _ngcontent-bjt-c23="">
+                                                                                        <td _ngcontent-bjt-c23=""
+                                                                                            class="text-left">
+                                                                                            PRODUIT ET SERVICE </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont5">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont5">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td _ngcontent-bjt-c23="">
+                                                                                            <div class="cont5">
+                                                                                                <div class="toggle-btn"
+                                                                                                    onclick="this.classList.toggle('active')">
+                                                                                                    <div
+                                                                                                        class="inner-circle">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+
+
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        Copyright &copy; Your Website 2021
+                    </div>
+                </div>
+            </footer>

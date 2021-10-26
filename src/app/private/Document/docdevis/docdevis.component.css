@@ -1,0 +1,58 @@
+small{
+    text-decoration: rgba(192, 192, 192, 0.397);
+    font-weight: 200;
+}
+p{
+    color:#0e5355 ;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+span{
+    display: inline-block;
+    margin-right: 12px;
+}
+label{
+    color: black;
+    text-align: left;
+    
+}
+input{
+    border:1px solid silver;
+    border-radius: 2px;
+    height: 35px;
+    
+}
+
+.hos, .hoss{
+    display: block;
+}
+.mougou{
+    display: block;
+}
+.lou{
+    display: block;
+    
+    margin-bottom: 15px;
+    width:440px
+}
+textarea{
+    border:1px solid silver;
+    border-radius: 2px;
+    width: 440px;
+    
+    
+}
+a {
+    color: rgba(128, 128, 128, 0.747);
+    text-decoration: none;
+    background-color: transparent;
+    
+  }
+
+
+.nav-link.active {
+    color: #41ad46c7;
+    font-weight: 600;
+    border-bottom: 2px inset;
+}

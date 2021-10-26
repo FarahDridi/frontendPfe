@@ -1,0 +1,88 @@
+img{
+    height: 150px;
+    width: 180px;
+    margin-left: 50px;
+    margin-top: -190px;
+    
+}
+.fifi{
+    border: 1px solid rgb(241, 220, 220);
+}
+h3{
+    color:black;
+    margin-left: 70px;
+    margin-top:-20px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.hoho{
+    margin-top: 165px;
+}
+h6{
+    color: black;
+    margin-left: 85px ;
+    margin-top: -30px;
+}
+button{
+    font-weight: bold;
+    margin-top: 100px;
+    margin-left: 20px;
+    padding-left: 70px;
+    padding-right: 80px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    
+}
+ul {
+    
+    margin-left: 185px;
+    padding: 0;
+    text-decoration: honeydew;
+    color: white;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li {
+    display: block;
+    text-align: center;
+    
+    
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  
+  li select{
+      color: white;
+      background-color: #0e5355;
+  }
+  .loul{
+      width: 60px;
+      height: 60px;
+      margin-top: 50px;
+      float: left;
+      margin-left: -270px;
+  }
+  h5{
+      margin-top: 70px;
+      margin-left: 285px;
+      color: black;
+      font-weight: bold;
+  }
+  p{
+      color: black;
+      text-align: center;
+  }
+  .nini{
+      text-align: center;
+  }
+  h4{
+      color: black;
+  }
+  span{
+      color:rgba(255, 0, 0, 0.644);
+      font-weight: bold;
+  }
